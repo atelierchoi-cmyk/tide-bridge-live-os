@@ -51,6 +51,8 @@ The first release should feel like a premium entertainment business website on t
 
 ## Run locally
 
+Requires Node.js 20 or newer.
+
 ```bash
 npm install
 cp .env.example .env.local
