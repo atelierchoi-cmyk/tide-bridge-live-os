@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { defaultLocale, getDictionary, isLocale, type Locale } from '@/lib/i18n';
+import { trustNav } from '@/lib/trust-pages';
 
 function localeFromPathname(pathname: string): Locale {
   const segment = pathname.split('/')[1];
@@ -13,11 +14,12 @@ export function SiteFooter() {
   const pathname = usePathname() || `/${defaultLocale}`;
   const locale = localeFromPathname(pathname);
   const dict = getDictionary(locale);
+  const trust = trustNav[locale];
   const prefix = `/${locale}`;
 
   return (
     <footer className="border-t border-white/10 bg-smoke/40">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-ivory">Tide Bridge Live OS</p>
           <p className="mt-4 max-w-xl text-sm leading-7 text-ivory/55">{dict.footer.description}</p>
@@ -33,6 +35,12 @@ export function SiteFooter() {
           <Link href="/admin" className="block hover:text-champagne">{dict.footer.admin}</Link>
           <Link href="/admin/pnl" className="block hover:text-champagne">{dict.footer.pnl}</Link>
           <Link href={`${prefix}/fan-demand`} className="block hover:text-champagne">{dict.footer.demand}</Link>
+        </div>
+        <div className="space-y-3 text-sm text-ivory/60">
+          <p className="label">{trust.label}</p>
+          <Link href={`${prefix}/public-sector`} className="block hover:text-champagne">{trust.publicSector}</Link>
+          <Link href={`${prefix}/verified-network`} className="block hover:text-champagne">{trust.verifiedNetwork}</Link>
+          <Link href={`${prefix}/advisory-board`} className="block hover:text-champagne">{trust.advisoryBoard}</Link>
         </div>
       </div>
     </footer>
