@@ -1,23 +1,31 @@
 import { NextResponse } from 'next/server';
+import { validatePartnerApplication } from '@/lib/leadForms';
 import { getSupabaseAdminClient } from '@/lib/supabase';
 
 export async function POST(request: Request) {
-  const body = await request.json();
+  const body = await request.json().catch(() => null);
+  const validation = validatePartnerApplication(body);
+
+  if (!validation.ok) {
+    return NextResponse.json({ ok: false, error: validation.error }, { status: 400 });
+  }
+
+  const data = validation.data;
   const supabase = getSupabaseAdminClient();
 
   if (!supabase) {
-    return NextResponse.json({ ok: true, mode: 'mock', data: body });
+    return NextResponse.json({ ok: true, mode: 'mock', data });
   }
 
   const { error } = await supabase.from('partner_applications').insert({
-    company: body.company,
-    contact_name: body.contactName,
-    email: body.email,
-    country: body.country,
-    city: body.city,
-    partner_type: body.partnerType,
-    website: body.website,
-    past_projects: body.pastProjects,
+    company: data.company,
+    contact_name: data.contactName,
+    email: data.email,
+    country: data.country,
+    city: data.city,
+    partner_type: data.partnerType,
+    website: data.website,
+    past_projects: data.pastProjects,
     status: 'pending'
   });
 
