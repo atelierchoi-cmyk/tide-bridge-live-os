@@ -68,7 +68,39 @@ Open `http://localhost:3000`.
 3. Add env variables to `.env.local`.
 4. Restart the dev server.
 
-If Supabase env variables are empty, forms will return mock success responses so the product can still be reviewed as a clickable MVP.
+Required variables:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+If Supabase env variables are empty or set to obvious placeholder values, forms will return mock success responses so the product can still be reviewed as a clickable MVP.
+
+## Vercel beta deployment
+
+1. Import this GitHub repository into Vercel.
+2. Set the Vercel project framework preset to Next.js.
+3. Use the default install and build commands:
+   - Install Command: `npm install`
+   - Build Command: `npm run build`
+   - Output Directory: leave blank for Next.js
+4. Confirm the project uses Node.js 20 or newer. The repository includes `.nvmrc` and `package.json` engines for this baseline.
+5. Add the Supabase environment variables in Vercel Project Settings, for Preview and Production:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+6. For a design-only preview, leave the Supabase values blank or use placeholder values. The intake APIs will respond in mock mode instead of writing to Supabase.
+7. For a connected beta, create the Supabase tables from `supabase/schema.sql`, add the real Supabase values in Vercel, and redeploy.
+8. After deployment, smoke test `/`, `/apply`, `/fan-demand`, `/partner/submit-offer`, and `/admin/pnl`.
+
+Deployment checklist:
+
+- `npm run typecheck` passes locally with Node.js 20.
+- `npm run build` passes locally with Node.js 20.
+- Supabase schema has been applied before using real env values.
+- Preview URL is reviewed without adding ticketing, payment, streaming, or merch commerce scope.
 
 ## Codex handoff
 
