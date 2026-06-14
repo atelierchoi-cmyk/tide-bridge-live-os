@@ -1,26 +1,38 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { defaultLocale, getDictionary, isLocale, type Locale } from '@/lib/i18n';
+
+function localeFromPathname(pathname: string): Locale {
+  const segment = pathname.split('/')[1];
+  return isLocale(segment) ? segment : defaultLocale;
+}
 
 export function SiteFooter() {
+  const pathname = usePathname() || `/${defaultLocale}`;
+  const locale = localeFromPathname(pathname);
+  const dict = getDictionary(locale);
+  const prefix = `/${locale}`;
+
   return (
     <footer className="border-t border-white/10 bg-smoke/40">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-ivory">Tide Bridge Live OS</p>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-ivory/55">
-            A private B2B live IP deal platform connecting K-POP projects with verified global promoters, venues, brands, investors, and demand data.
-          </p>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-ivory/55">{dict.footer.description}</p>
         </div>
         <div className="space-y-3 text-sm text-ivory/60">
-          <p className="label">Platform</p>
-          <Link href="/promoters" className="block hover:text-champagne">For Promoters</Link>
-          <Link href="/agencies" className="block hover:text-champagne">For Agencies</Link>
-          <Link href="/partner" className="block hover:text-champagne">Partner Portal</Link>
+          <p className="label">{dict.footer.platform}</p>
+          <Link href={`${prefix}/promoters`} className="block hover:text-champagne">{dict.footer.promoters}</Link>
+          <Link href={`${prefix}/agencies`} className="block hover:text-champagne">{dict.footer.agencies}</Link>
+          <Link href="/partner" className="block hover:text-champagne">{dict.footer.partner}</Link>
         </div>
         <div className="space-y-3 text-sm text-ivory/60">
-          <p className="label">Operate</p>
-          <Link href="/admin" className="block hover:text-champagne">Admin</Link>
-          <Link href="/admin/pnl" className="block hover:text-champagne">P&L Simulator</Link>
-          <Link href="/fan-demand" className="block hover:text-champagne">Fan Demand</Link>
+          <p className="label">{dict.footer.operate}</p>
+          <Link href="/admin" className="block hover:text-champagne">{dict.footer.admin}</Link>
+          <Link href="/admin/pnl" className="block hover:text-champagne">{dict.footer.pnl}</Link>
+          <Link href={`${prefix}/fan-demand`} className="block hover:text-champagne">{dict.footer.demand}</Link>
         </div>
       </div>
     </footer>
