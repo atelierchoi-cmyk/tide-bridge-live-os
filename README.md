@@ -8,7 +8,7 @@ This starter is designed for Codex/GitHub/Vercel/Supabase development.
 
 > Private B2B Live IP Infrastructure.
 
-The first release should read as a premium, confidential operating layer for reviewed global live IP opportunities. It is not an open marketplace, fan app, broker site, or consumer commerce product.
+The first release should read as a premium, confidential operating layer for reviewed global live IP opportunities, not as a consumer-facing commerce or open-access product.
 
 ## Included in this MVP starter
 
