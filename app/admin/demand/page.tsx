@@ -10,7 +10,7 @@ const demand = [
 
 export default function DemandPage() {
   return (
-    <Section eyebrow="Admin" title="Fan Demand Dashboard" body="Use demand signal data to support routing, offer negotiation, sponsorship, and ticket price assumptions.">
+    <Section eyebrow="Admin" title="Market Demand Intelligence" body="Use demand signal data to support market prioritization, opportunity review, brand fit, and commercial assumptions.">
       <div className="grid gap-4 md:grid-cols-4">
         {demand.map((metric) => <StatCard key={metric.label} {...metric} />)}
       </div>

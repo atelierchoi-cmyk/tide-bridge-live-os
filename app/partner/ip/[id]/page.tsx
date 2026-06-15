@@ -15,17 +15,17 @@ export default function PartnerIPDetailPage({ params }: { params: { id: string }
           <h3 className="text-2xl font-semibold tracking-[-0.03em]">Package Overview</h3>
           <dl className="mt-6 grid gap-4 text-sm md:grid-cols-2">
             <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Format</dt><dd className="mt-1 text-ivory">{item.format}</dd></div>
-            <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Capacity</dt><dd className="mt-1 text-ivory">{item.capacityRange}</dd></div>
-            <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Base Guarantee</dt><dd className="mt-1 text-ivory">{money(item.baseGuarantee, item.currency)}</dd></div>
-            <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Deal Mode</dt><dd className="mt-1 capitalize text-ivory">{item.dealMode.replace('_', ' ')}</dd></div>
+            <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Capacity Signal</dt><dd className="mt-1 text-ivory">{item.capacityRange}</dd></div>
+            <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Commercial Baseline</dt><dd className="mt-1 text-ivory">{money(item.baseGuarantee, item.currency)}</dd></div>
+            <div className="rounded-2xl bg-white/[0.04] p-4"><dt className="text-ivory/40">Review Model</dt><dd className="mt-1 capitalize text-ivory">{item.dealMode.replace('_', ' ')}</dd></div>
           </dl>
         </div>
         <div className="card p-6">
-          <h3 className="text-2xl font-semibold tracking-[-0.03em]">Recommended Markets</h3>
+          <h3 className="text-2xl font-semibold tracking-[-0.03em]">Market Fit Signals</h3>
           <div className="mt-5 flex flex-wrap gap-2">
             {item.markets.map((market) => <span key={market} className="rounded-full bg-white/[0.05] px-4 py-2 text-sm text-ivory/65">{market}</span>)}
           </div>
-          <Link href="/partner/submit-offer" className="btn-primary mt-8 inline-flex">Submit Offer</Link>
+          <Link href="/partner/submit-offer" className="btn-primary mt-8 inline-flex">Request Review</Link>
         </div>
       </div>
     </Section>

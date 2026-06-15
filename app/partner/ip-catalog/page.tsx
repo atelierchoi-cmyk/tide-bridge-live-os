@@ -4,7 +4,7 @@ import { ipPackages } from '@/lib/data';
 
 export default function PartnerCatalogPage() {
   return (
-    <Section eyebrow="Private IP Catalog" title="Approved partner catalog.">
+    <Section eyebrow="Private IP Catalog" title="Controlled IP packages available for approved partner review.">
       <div className="grid gap-5 md:grid-cols-2">
         {ipPackages.map((item) => <IPCard key={item.id} item={item} privateMode />)}
       </div>

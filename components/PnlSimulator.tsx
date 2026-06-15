@@ -19,7 +19,7 @@ export function PnlSimulator() {
 
   const fields = [
     ['capacity', 'Capacity'],
-    ['averageTicketPrice', 'Avg Ticket Price'],
+    ['averageTicketPrice', 'Avg Revenue per Seat'],
     ['salesRatio', 'Sales Ratio'],
     ['artistGuarantee', 'Artist Guarantee'],
     ['localProductionCost', 'Local Production'],
@@ -48,7 +48,7 @@ export function PnlSimulator() {
         <p className="label">Scenario Output</p>
         <div className="mt-6 space-y-4">
           {[
-            ['Gross Revenue', money(result.grossRevenue)],
+            ['Baseline Revenue', money(result.grossRevenue)],
             ['Platform Fee', money(result.platformFee)],
             ['Total Cost', money(result.totalCost)],
             ['Projected Profit', money(result.projectedProfit)],

@@ -14,12 +14,17 @@ export function IPCard({
   copy?: { capacity: string; base: string; request: string; viewDetails: string };
 }) {
   const href = privateMode ? `/partner/ip/${item.id}` : `/${locale}/apply`;
+  const accessLabel = {
+    public: 'Preview',
+    partner: 'Private Review',
+    restricted: 'Restricted'
+  }[item.accessLevel];
 
   return (
     <div className="card flex h-full flex-col p-6">
       <div className="flex items-start justify-between gap-4">
         <p className="label">{item.category}</p>
-        <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-ivory/45">{item.accessLevel}</span>
+        <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-ivory/45">{accessLabel}</span>
       </div>
       <h3 className="mt-5 text-2xl font-semibold tracking-[-0.03em] text-ivory">{item.title}</h3>
       <p className="mt-2 text-sm text-champagne/80">{item.format}</p>

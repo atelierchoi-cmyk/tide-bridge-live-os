@@ -1,14 +1,14 @@
 # Tide Bridge Live OS MVP
 
-**Tide Bridge Live OS** is a private B2B platform MVP for connecting K-POP live IP with global promoters, venues, brands, investors, and fan demand data.
+**Tide Bridge Live OS** is a private B2B infrastructure MVP for global K-POP live IP expansion through verified partners, private IP access, offer management, and market demand intelligence.
 
 This starter is designed for Codex/GitHub/Vercel/Supabase development.
 
 ## Core positioning
 
-> Connecting K-POP Live IP to Global Promoters.
+> Private B2B Live IP Infrastructure.
 
-The first release should feel like a premium entertainment business website on the outside, while operating as a private B2B deal platform behind login.
+The first release should read as a premium, confidential operating layer for reviewed global live IP opportunities. It is not an open marketplace, fan app, broker site, or consumer commerce product.
 
 ## Included in this MVP starter
 
@@ -18,14 +18,14 @@ The first release should feel like a premium entertainment business website on t
   - Platform
   - For Promoters
   - For Agencies
-  - IP Catalog Preview
-  - Fan Demand
-  - Partner Application
+  - Private IP Catalog preview
+  - Market Demand Intelligence
+  - Private access application
 - Partner portal
   - Partner dashboard
   - Logged-in IP catalog
   - IP detail
-  - Submit offer
+  - Submit structured opportunity review
 - Admin console
   - Dashboard
   - IP management
@@ -100,7 +100,7 @@ Deployment checklist:
 - `npm run typecheck` passes locally with Node.js 20.
 - `npm run build` passes locally with Node.js 20.
 - Supabase schema has been applied before using real env values.
-- Preview URL is reviewed without adding ticketing, payment, streaming, or merch commerce scope.
+- Preview URL is reviewed without adding consumer commerce, media delivery, or unrelated monetization scope.
 
 ## Codex handoff
 
@@ -108,12 +108,12 @@ Use `CODEX_START_PROMPT.md` as the first Codex instruction. Then break implement
 
 ## Current MVP principle
 
-Do **not** build ticketing, payment splitting, streaming, or merch commerce in v0.1.
+Do **not** build consumer commerce, media delivery, or unrelated monetization modules in v0.1.
 
 The first monetizable goal is:
 
 1. Recruit verified local promoters.
 2. Show selected K-POP live IP/packages.
-3. Collect structured offers.
-4. Review each deal through P&L/BEP logic.
-5. Move qualified offers into a controlled deal room process.
+3. Collect structured opportunity review requests.
+4. Review each opportunity through P&L/BEP and deal-readiness logic.
+5. Move qualified opportunities into a controlled private review process.

@@ -133,4 +133,4 @@ Do not build:
 - AI recommendation engine
 - blockchain/NFT features
 
-The first release must be a **homepage-style private B2B live IP deal platform**.
+The first release must be a **homepage-style private B2B live IP infrastructure**.
