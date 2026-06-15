@@ -38,9 +38,9 @@ export function SiteFooter() {
         </div>
         <div className="space-y-3 text-sm text-ivory/60">
           <p className="label">{trust.label}</p>
-          <Link href={`${prefix}/public-sector`} className="block hover:text-champagne">{trust.publicSector}</Link>
+          <Link href={`${prefix}/public-sector`} className="block hover:text-champagne">{trust.publicAlignment}</Link>
           <Link href={`${prefix}/verified-network`} className="block hover:text-champagne">{trust.verifiedNetwork}</Link>
-          <Link href={`${prefix}/advisory-board`} className="block hover:text-champagne">{trust.advisoryBoard}</Link>
+          <Link href={`${prefix}/advisory-board`} className="block hover:text-champagne">{trust.advisoryStructure}</Link>
         </div>
       </div>
     </footer>
