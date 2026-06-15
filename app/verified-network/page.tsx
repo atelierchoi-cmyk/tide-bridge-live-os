@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
-export default function VerifiedNetworkRedirect() {
+export default function VerifiedNetworkPage() {
   redirect('/ko/verified-network');
 }
