@@ -26,6 +26,7 @@ export function SiteFooter() {
         </div>
         <div className="space-y-3 text-sm text-ivory/60">
           <p className="label">{dict.footer.platform}</p>
+          <Link href={`${prefix}/launchpad`} className="block hover:text-champagne">Launchpad</Link>
           <Link href={`${prefix}/promoters`} className="block hover:text-champagne">{dict.footer.promoters}</Link>
           <Link href={`${prefix}/agencies`} className="block hover:text-champagne">{dict.footer.agencies}</Link>
           <Link href="/partner" className="block hover:text-champagne">{dict.footer.partner}</Link>
