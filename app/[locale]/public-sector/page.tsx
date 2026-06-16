@@ -1,6 +1,6 @@
 import { PublicSectorPage } from '@/components/TrustPages';
-import { type Locale } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 
-export default function Page({ params }: { params: { locale: Locale } }) {
+export default function PublicSectorRoute({ params }: { params: { locale: Locale } }) {
   return <PublicSectorPage locale={params.locale} />;
 }

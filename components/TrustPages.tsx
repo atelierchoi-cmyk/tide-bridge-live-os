@@ -3,7 +3,7 @@ import { Section } from '@/components/Section';
 import type { Locale } from '@/lib/i18n';
 import { trustPages } from '@/lib/trust-pages';
 
-type PageKey = 'publicSector' | 'verifiedNetwork' | 'advisoryBoard';
+type PageKey = 'publicSector' | 'verifiedNetwork' | 'advisoryStructure';
 
 function TrustPage({ locale, pageKey }: { locale: Locale; pageKey: PageKey }) {
   const copy = trustPages[locale][pageKey];
@@ -35,6 +35,6 @@ export function VerifiedNetworkPage({ locale }: { locale: Locale }) {
   return <TrustPage locale={locale} pageKey="verifiedNetwork" />;
 }
 
-export function AdvisoryBoardPage({ locale }: { locale: Locale }) {
-  return <TrustPage locale={locale} pageKey="advisoryBoard" />;
+export function AdvisoryStructurePage({ locale }: { locale: Locale }) {
+  return <TrustPage locale={locale} pageKey="advisoryStructure" />;
 }

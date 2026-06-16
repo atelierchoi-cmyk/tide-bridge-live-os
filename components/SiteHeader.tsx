@@ -30,7 +30,9 @@ export function SiteHeader() {
     { href: `${prefix}/promoters`, label: dict.nav.promoters },
     { href: `${prefix}/agencies`, label: dict.nav.agencies },
     { href: `${prefix}/ip-catalog`, label: dict.nav.catalog },
-    { href: `${prefix}/fan-demand`, label: dict.nav.demand }
+    { href: `${prefix}/fan-demand`, label: dict.nav.demand },
+    { href: `${prefix}/verified-network`, label: dict.nav.verified },
+    { href: `${prefix}/public-sector`, label: dict.nav.publicAlignment }
   ];
 
   return (
@@ -39,7 +41,7 @@ export function SiteHeader() {
         <Link href={prefix} className="text-sm font-bold uppercase tracking-[0.35em] text-ivory">
           Tide Bridge
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-4 md:flex xl:gap-6">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="text-xs uppercase tracking-[0.22em] text-ivory/65 transition hover:text-champagne">
               {item.label}
@@ -60,7 +62,7 @@ export function SiteHeader() {
             ))}
           </div>
           <Link href={`${prefix}/login`} className="hidden text-xs uppercase tracking-[0.22em] text-ivory/65 hover:text-champagne sm:block">
-            {dict.nav.login}
+            Login
           </Link>
           <Link href={`${prefix}/apply`} className="rounded-full border border-champagne/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-champagne hover:bg-champagne hover:text-ink">
             {dict.nav.apply}

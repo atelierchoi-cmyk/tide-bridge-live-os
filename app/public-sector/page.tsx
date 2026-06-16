@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
-export default function PublicSectorRedirect() {
+export default function PublicSectorPage() {
   redirect('/ko/public-sector');
 }
