@@ -5,6 +5,7 @@
 - `/` — homepage
 - `/about` — company/platform position
 - `/platform` — module overview
+- `/intelligence` — intelligence dashboard and subscription value layer
 - `/promoters` — local promoter recruitment page
 - `/agencies` — agency/IP holder page
 - `/ip-catalog` — public IP preview
