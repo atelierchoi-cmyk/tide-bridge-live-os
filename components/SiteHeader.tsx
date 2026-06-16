@@ -26,11 +26,12 @@ export function SiteHeader() {
   const dict = getDictionary(locale);
   const prefix = `/${locale}`;
   const navItems = [
-    { href: `${prefix}/platform`, label: dict.nav.platform },
-    { href: `${prefix}/promoters`, label: dict.nav.promoters },
-    { href: `${prefix}/agencies`, label: dict.nav.agencies },
-    { href: `${prefix}/ip-catalog`, label: dict.nav.catalog },
-    { href: `${prefix}/fan-demand`, label: dict.nav.demand }
+    { href: `${prefix}/platform`, label: 'Platform' },
+    { href: `${prefix}/launchpad`, label: 'Launchpad' },
+    { href: `${prefix}/promoters`, label: 'For Promoters' },
+    { href: `${prefix}/agencies`, label: 'For Agencies' },
+    { href: `${prefix}/ip-catalog`, label: 'IP Catalog' },
+    { href: `${prefix}/fan-demand`, label: 'Fan Demand' }
   ];
 
   return (
