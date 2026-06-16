@@ -43,35 +43,35 @@ const sharedLaunchpad: LaunchpadCopy = {
   hero: {
     eyebrow: 'TIDE BRIDGE LAUNCHPAD',
     title: 'North America Market Entry for Emerging Korean IP.',
-    body: 'Tide Bridge Launchpad helps emerging Korean content IP test, enter, and grow in North America through creative partnerships, local promotion, live showcases, and market intelligence.',
+    body: 'A private market-entry program for emerging Korean IP — combining creative partners, local promotion, live showcases, and market intelligence.',
     primary: 'Request Launchpad Review',
     secondary: 'Discuss Market Entry Pilot'
   },
   audience: {
-    title: 'For rookie and emerging Korean content IP.',
-    body: 'Launchpad is built for emerging live and cultural IP with North America potential, not only established K-pop touring projects.',
+    title: 'For emerging Korean IP with global potential.',
+    body: 'Built for projects that need proof before scale — not only established K-pop tours.',
     cards: [
       ['Rookie K-pop and music groups', 'Early-stage music IP preparing for overseas response testing.'],
-      ['Actor and celebrity fan-event IP', 'Fan meetings, special appearances, and audience-development formats.'],
-      ['K-band, K-hiphop, and crossover music IP', 'Genre-driven projects that need local creative and promotion validation.'],
-      ['Webtoon, animation, and character-based live IP', 'Story and character IP that can extend into events, showcases, and fan experiences.'],
-      ['Cultural, exhibition, and immersive IP', 'Korean cultural formats with US market and partner potential.']
+      ['Actor and celebrity fan-event IP', 'Fan meetings, appearances, and audience-development formats.'],
+      ['K-band, K-hiphop, and crossover IP', 'Genre-led projects that need local validation.'],
+      ['Webtoon, animation, and character IP', 'Story IP extending into events, showcases, and fan experiences.'],
+      ['Cultural, exhibition, and immersive IP', 'Korean cultural formats with US market potential.']
     ]
   },
   services: {
     title: 'What Launchpad provides.',
-    body: 'A label-services support layer for pre-label and pre-tour validation, scoped case by case with IP owners and partners.',
+    body: 'A pre-label and pre-tour support layer, scoped case by case with IP owners and partners.',
     cards: [
-      ['Market Entry Strategy', 'US market fit review, target audience mapping, territory prioritization, and fan or market signal review.'],
-      ['Creative Bridge', 'Songwriter and producer matching, song camp coordination, demo sourcing, and feature or remix opportunity review.'],
-      ['Promotion Test', 'Digital seeding, community activation, niche media or creator outreach, and early audience response tracking.'],
-      ['Live Showcase', 'LA, NY, or key-city showcase planning with venue, local partner, promoter, brand, and media invite coordination.'],
-      ['Readiness Report', 'US Market Readiness Report with fan demand signals, promoter interest notes, brand fit notes, and recommended next steps.']
+      ['Market Entry Strategy', 'US market fit, audience mapping, territory priority, and demand signal review.'],
+      ['Creative Bridge', 'Songwriter, producer, demo, feature, remix, and song-camp coordination.'],
+      ['Promotion Test', 'Digital seeding, community activation, niche media, creator outreach, and response tracking.'],
+      ['Live Showcase', 'Key-city showcase planning with venue, promoter, brand, media, and partner coordination.'],
+      ['Readiness Report', 'A concise market-readiness report with demand, partner, brand, and next-step signals.']
     ]
   },
   connection: {
     title: 'From intelligence to market execution.',
-    body: 'Live OS structures IP value, market demand, and partner credibility. Launchpad turns that intelligence into a controlled market-entry pilot for emerging Korean content IP.',
+    body: 'Live OS clarifies value, demand, and partner credibility. Launchpad turns that intelligence into a controlled pilot.',
     flow: [
       'IP Value & Market Signals',
       'Partner / Promoter Review',
@@ -82,19 +82,19 @@ const sharedLaunchpad: LaunchpadCopy = {
     ]
   },
   agencies: {
-    title: 'Reduce market-entry risk before full-scale expansion.',
-    body: 'For agencies and IP owners, Launchpad supports early North America validation before major touring, label, or brand spend.',
+    title: 'Validate before full-scale expansion.',
+    body: 'For agencies and IP owners, Launchpad reduces market-entry risk before major touring, label, or brand spend.',
     bullets: [
-      'Validate US market potential before major spend',
+      'Validate US market potential',
       'Test songs, concepts, and audience response',
       'Access creative and promotional partners',
-      'Run controlled live showcase pilots',
+      'Run controlled showcase pilots',
       'Receive structured readiness reporting'
     ]
   },
   partners: {
-    title: 'Connect with emerging Korean IP through a verified B2B channel.',
-    body: 'For creative and local partners, Launchpad creates a reviewed path into emerging Korean content opportunities.',
+    title: 'A verified path into emerging Korean IP.',
+    body: 'For local and creative partners, Launchpad creates a reviewed B2B channel into selected Korean content opportunities.',
     bullets: [
       'Songwriters and producers',
       'Local promoters and venues',
@@ -105,7 +105,7 @@ const sharedLaunchpad: LaunchpadCopy = {
   },
   note: {
     title: 'Market-entry support, not a guaranteed outcome.',
-    body: 'Tide Bridge Launchpad is a market-entry and label-services support layer. It does not guarantee commercial success, chart performance, ticket sales, label deals, or investment outcomes. Project scope, rights participation, and commercial terms are reviewed case by case with the IP owner and relevant partners.'
+    body: 'Launchpad does not guarantee commercial success, charts, ticket sales, label deals, or investment outcomes. Scope, rights participation, and terms are reviewed case by case.'
   }
 };
 
@@ -114,19 +114,19 @@ export const launchpadPages: Record<Locale, LaunchpadCopy> = {
     ...sharedLaunchpad,
     hero: {
       ...sharedLaunchpad.hero,
-      body: 'Tide Bridge Launchpad는 신인 및 성장 단계의 한국 콘텐츠 IP가 북미 시장에서 반응을 검증하고, 현지 프로모션, 크리에이티브 협업, 라이브 쇼케이스, 시장 리포트를 통해 다음 단계로 확장할 수 있도록 지원하는 시장 진입 프로그램입니다.'
+      body: '신인 및 성장 단계의 한국 IP를 위한 비공개 북미 시장 진입 프로그램입니다. 크리에이티브 파트너, 현지 프로모션, 쇼케이스, 시장 인텔리전스를 연결합니다.'
     },
     audience: {
       ...sharedLaunchpad.audience,
-      body: 'Launchpad는 이미 검증된 대형 K-pop 투어뿐 아니라 북미 가능성을 테스트해야 하는 신인 및 성장 단계의 라이브, 문화 IP를 위한 프로그램입니다.'
+      body: '대형 K-pop 투어뿐 아니라, 확장 전 시장 반응 검증이 필요한 성장 단계 IP를 위한 구조입니다.'
     },
     services: {
       ...sharedLaunchpad.services,
-      body: 'IP 오너 및 파트너와 프로젝트별 범위를 검토하는 pre-label / pre-tour 검증용 label-services support layer입니다.'
+      body: 'IP 오너와 파트너별로 범위를 검토하는 pre-label / pre-tour 지원 레이어입니다.'
     },
     agencies: {
       ...sharedLaunchpad.agencies,
-      body: '에이전시와 IP 오너가 대규모 투어, 레이블, 브랜드 투자 전에 북미 시장 가능성을 더 낮은 리스크로 검증할 수 있도록 지원합니다.'
+      body: '대규모 투어, 레이블, 브랜드 투자 전 북미 시장성을 낮은 리스크로 검증합니다.'
     }
   },
   en: sharedLaunchpad,
