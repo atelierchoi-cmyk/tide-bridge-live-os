@@ -61,7 +61,7 @@ export const ipPackages: IPPackage[] = [
 
 export const adminMetrics = [
   { label: 'Partner Verification', value: '64', delta: '+18 under review' },
-  { label: 'Demand Signals', value: '8,420', delta: 'Top market: Bangkok' },
+  { label: 'Market Signals', value: '8,420', delta: 'Top market: Bangkok' },
   { label: 'Offers in Review', value: '23', delta: '5 active reviews' },
   { label: 'Opportunity Value', value: '$1.84M', delta: 'Commercial baseline' }
 ];

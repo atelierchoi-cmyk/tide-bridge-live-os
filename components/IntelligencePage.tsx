@@ -1,4 +1,9 @@
 import Link from 'next/link';
+import {
+  DealReadinessReportPreview,
+  IntelligenceDashboardPreview,
+  MarketSignalMatrix
+} from '@/components/ProductDemos';
 import { Section } from '@/components/Section';
 import { intelligenceCategories, intelligenceDictionaries } from '@/lib/intelligence';
 import type { Locale } from '@/lib/i18n';
@@ -32,13 +37,15 @@ export function IntelligencePage({ locale }: { locale: Locale }) {
           <p className="label mb-6">{copy.hero.eyebrow}</p>
           <h1 className="text-5xl font-semibold leading-[0.95] text-ivory md:text-8xl">{copy.hero.title}</h1>
           <p className="mt-8 max-w-3xl text-lg leading-8 text-ivory/65">{copy.hero.body}</p>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-ivory/55">{copy.hero.support}</p>
+          <p className="mt-4 max-w-3xl whitespace-pre-line text-base leading-7 text-ivory/55">{copy.hero.support}</p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <Link href={`/${locale}/apply`} className="btn-primary text-center">Request Intelligence Preview</Link>
             <Link href={`/${locale}/platform`} className="btn-secondary text-center">Explore Live OS</Link>
           </div>
         </div>
       </section>
+
+      <IntelligenceDashboardPreview />
 
       <Section eyebrow={copy.architecture.eyebrow} title={copy.architecture.title} body={copy.architecture.body}>
         <div className="grid gap-5 md:grid-cols-4">
@@ -59,6 +66,9 @@ export function IntelligencePage({ locale }: { locale: Locale }) {
           ))}
         </div>
       </Section>
+
+      <MarketSignalMatrix />
+      <DealReadinessReportPreview />
 
       <Section eyebrow={copy.subscribe.eyebrow} title={copy.subscribe.title} body={copy.subscribe.body}>
         <div className="grid gap-5 md:grid-cols-3">
