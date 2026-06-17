@@ -2,7 +2,7 @@
 
 Build and harden this MVP web application called **Tide Bridge Live OS**.
 
-It is a private B2B platform connecting K-POP live IP with global promoters, venues, brands, investors, and fan demand data.
+It is a private B2B live and cultural IP infrastructure platform connecting Korean content with global promoters, venues, brands, investors, and market intelligence.
 
 ## Stack
 
@@ -28,7 +28,7 @@ Design direction:
 
 1. Public website for credibility and partner acquisition.
 2. Promoter/application intake.
-3. Fan demand signal collection.
+3. Market signal collection.
 4. IP Catalog and IP detail pages.
 5. Submit Offer flow.
 6. Admin dashboard and pipeline visibility.
@@ -57,7 +57,7 @@ Tables:
 
 ## Business logic
 
-### Fan demand form
+### Market signal form
 
 Save:
 
@@ -65,8 +65,8 @@ Save:
 - email
 - country
 - city
-- artist preference
-- ticket range
+- IP/category interest
+- market interest range
 - VIP interest
 - consent
 
@@ -93,7 +93,7 @@ Save:
 - venue
 - capacity
 - date window
-- guarantee amount
+- commercial baseline
 - currency
 - deal mode
 - notes
@@ -133,4 +133,4 @@ Do not build:
 - AI recommendation engine
 - blockchain/NFT features
 
-The first release must be a **homepage-style private B2B live IP infrastructure**.
+The first release must be a **homepage-style private B2B live and cultural IP infrastructure**.
