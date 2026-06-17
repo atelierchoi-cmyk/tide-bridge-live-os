@@ -21,10 +21,10 @@ const options = {
 };
 
 const reviewModels = {
-  ko: { guarantee: '개런티 검토', resale: '현지 판매 구조 검토', co_promotion: '공동 운영 검토', sponsorship: '브랜드 협력 검토' },
-  en: { guarantee: 'Guarantee Review', resale: 'Local Sales Review', co_promotion: 'Co-Operation Review', sponsorship: 'Brand Partnership Review' },
-  ja: { guarantee: '保証条件レビュー', resale: '現地販売構造レビュー', co_promotion: '共同運営レビュー', sponsorship: 'ブランド連携レビュー' },
-  zh: { guarantee: '保底条件审核', resale: '本地销售结构审核', co_promotion: '联合运营审核', sponsorship: '品牌合作审核' }
+  ko: { guarantee: '상업 기준 검토', resale: '현지 수익 구조 검토', co_promotion: '공동 운영 검토', sponsorship: '브랜드 협력 검토' },
+  en: { guarantee: 'Commercial Baseline Review', resale: 'Local Revenue Structure Review', co_promotion: 'Co-Operation Review', sponsorship: 'Brand Partnership Review' },
+  ja: { guarantee: '商業基準レビュー', resale: '現地収益構造レビュー', co_promotion: '共同運営レビュー', sponsorship: 'ブランド連携レビュー' },
+  zh: { guarantee: '商业基准审核', resale: '本地收益结构审核', co_promotion: '联合运营审核', sponsorship: '品牌合作审核' }
 };
 
 function forms(locale: Locale, copy: any) {
@@ -137,7 +137,7 @@ const sharedNav = {
   promoters: 'For Promoters',
   agencies: 'For Agencies',
   catalog: 'IP Catalog',
-  demand: 'Fan Demand',
+  demand: 'Market Signals',
   verified: 'Verified Network',
   publicAlignment: 'Public Alignment',
   login: 'Private Access',
@@ -145,82 +145,82 @@ const sharedNav = {
 };
 
 const sharedHeroCopy = {
-  eyebrow: 'PRIVATE B2B LIVE IP INFRASTRUCTURE',
-  title: 'Connecting K-POP Live IP with Verified Global Promoters.',
-  body: 'Tide Bridge structures global live entertainment opportunities through verified partners, private IP access, offer management, and market demand intelligence.',
-  primary: 'Request Private Access',
+  eyebrow: 'PRIVATE B2B LIVE & CULTURAL IP INFRASTRUCTURE',
+  title: 'Private access. Verified partners. Smarter cross-border IP decisions.',
+  body: 'Tide Bridge Live OS structures live and cultural IP opportunities through controlled access, market intelligence, partner review, and deal readiness.',
+  primary: 'Request Access',
   secondary: 'Explore Platform',
   actions: [
-    { label: 'Request Private Access', path: 'apply', variant: 'primary' },
+    { label: 'Request Access', path: 'apply', variant: 'primary' },
     { label: 'Explore Platform', path: 'platform', variant: 'secondary' },
+    { label: 'View Intelligence', path: 'intelligence', variant: 'secondary' },
     { label: 'Submit Market Interest', path: 'fan-demand', variant: 'secondary' },
-    { label: 'Apply as Promoter', path: 'promoters', variant: 'secondary' }
   ],
   cards: [
-    ['Private IP Access', 'Controlled review of live IP formats and market-ready packages.'],
-    ['Offer Management', 'Structured intake for market coverage, capacity, timing, and commercial baseline.'],
-    ['Market Demand Intelligence', 'Fan and market signals used for early-stage opportunity review.']
+    ['Platform', 'Private IP access and structured offer workflow.'],
+    ['Intelligence', 'IP value, market demand, partner trust, and deal readiness.'],
+    ['Network', 'Verified partner review and trust layer.']
   ]
 };
 
 const englishPages = {
-  footer: { description: 'Private B2B live IP infrastructure connecting K-POP projects with verified global promoters, private IP access, offer management, and demand intelligence.', platform: 'Infrastructure', operate: 'Review Layer', promoters: 'For Promoters', agencies: 'For Agencies', partner: 'Partner Portal', admin: 'Admin Console', pnl: 'Deal Readiness', demand: 'Market Demand' },
-  home: { connectEyebrow: 'Infrastructure Layer', connectTitle: 'A verified operating layer for global K-POP live IP expansion.', connectBody: 'Tide Bridge organizes partner verification, private IP access, offer management, and market demand intelligence into one confidential B2B workflow.', connectItems: ['Private IP Access', 'Verified Global Promoter Network', 'Offer Management', 'Market Demand Intelligence', 'Structured Opportunity Review', 'Deal Readiness'], metricsEyebrow: 'MVP Control Metrics', metricsTitle: 'Built for verified access and opportunity review.', metrics: metrics([['Partner Verification', '64', '+18 under review'], ['Demand Signals', '8,420', 'Top market: Bangkok'], ['Offers in Review', '23', '5 active reviews'], ['Opportunity Value', '$1.84M', 'Commercial baseline']]) },
-  about: { eyebrow: 'Platform Overview', title: 'Private infrastructure for turning Korean live IP into structured global opportunities.', body: 'Tide Bridge focuses on verified partners, controlled IP access, structured offers, market demand signals, and deal readiness review.', cards: [['Private IP Access', 'Live formats are organized for confidential partner review.'], ['Verified Global Promoter Network', 'Promoters are reviewed by company profile, track record, references, market coverage, and settlement reliability.'], ['Structured Opportunity Review', 'Each opportunity moves through verification, offer intake, commercial assumptions, and readiness assessment.']] },
-  platform: { eyebrow: 'Platform', title: 'A structured operating layer for global live IP opportunities.', body: 'Tide Bridge supports private B2B workflows for verified promoters, agencies, and partners evaluating K-POP live IP expansion.', modules: [['Partner Verification', 'Company profile, track record, references, market coverage, and settlement reliability.'], ['Private IP Access', 'Controlled access to selected K-POP and Korean entertainment live IP packages.'], ['Offer Management', 'Structured review of city, venue, capacity, timing, and commercial baseline.'], ['Market Demand Intelligence', 'Signals from fans and markets are interpreted as demand intelligence, not guaranteed show requests.'], ['Deal Readiness', 'Commercial assumptions and operational capacity are reviewed before deeper negotiation.'], ['Public & Industry Alignment', 'Positioned in line with Korea’s K-content export and international cultural exchange ecosystem without claiming official endorsement.']] },
-  promoters: { eyebrow: 'For Promoters', title: 'Verified access for promoters with proven local capacity.', body: 'Tide Bridge is not an open marketplace. Promoter access is reviewed through company profiles, track records, references, market coverage, and settlement reliability.', cards: [['What you can submit', 'City, venue, sellable capacity, date window, commercial baseline, local rationale, and demand signals.'], ['What you can review', 'Selected IP formats and market fit materials available only through approved private access.'], ['Verification criteria', 'Company profile, execution history, references, territory coverage, and settlement reliability.'], ['Next step', 'Apply for reviewed access before submitting a structured opportunity.']], cta: 'Request Private Access' },
-  agencies: { eyebrow: 'For Agencies', title: 'Review global live opportunities without exposing IP to an open marketplace.', body: 'Tide Bridge helps Korean agencies compare credible promoter interest, market demand, partner verification, and early-stage opportunity readiness.', cards: [['Partner Credibility', 'Review promoter capacity through company profiles, references, and execution history.'], ['Private IP Access', 'Keep artist and package materials controlled until partner access is approved.'], ['Offer Comparison', 'Compare structured opportunity signals across markets before committing resources.'], ['Market Demand', 'Use demand intelligence to prioritize cities and formats for further review.']], cta: 'Request Review' },
-  catalog: { eyebrow: 'Private IP Catalog', title: 'Selected live IP formats available for structured review.', body: 'The public catalog is a controlled preview. Detailed artist, commercial, and operating materials are available only to approved partners.', capacity: 'Capacity Signal', base: 'Commercial Baseline', request: 'Request Review', viewDetails: 'Review Details' },
-  apply: { eyebrow: 'Request Private Access', title: 'Apply for reviewed partner access.', body: 'Applicants should share company profile, market coverage, past live projects, and Korean entertainment IP interests for partner verification.' },
-  fanDemand: { eyebrow: 'Market Demand Intelligence', title: 'Submit market interest signals for K-POP live IP.', body: 'Fan and market input helps identify demand patterns. It is not a vote, booking request, or guarantee that a show will be presented.' },
-  submitOffer: { eyebrow: 'Offer Management', title: 'Submit a structured opportunity for review.', body: 'A strong review request includes city, venue or local capacity, sellable capacity, date window, commercial baseline, partner credibility, and market rationale.' }
+  footer: { description: 'Private B2B live and cultural IP infrastructure connecting Korean content with verified partners, private access, offer management, and market intelligence.', platform: 'Infrastructure', operate: 'Review Layer', promoters: 'For Promoters', agencies: 'For IP Owners', partner: 'Partner Portal', admin: 'Admin Console', pnl: 'Deal Readiness', demand: 'Market Signals' },
+  home: { connectEyebrow: 'Infrastructure Layer', connectTitle: 'One private layer for IP access, intelligence, and verified execution.', connectBody: 'Tide Bridge connects IP owners, promoters, brands, and industry partners through controlled access and structured opportunity review.', connectItems: ['Platform', 'Intelligence', 'Launchpad', 'Network', 'Use Cases', 'Deal Readiness'], metricsEyebrow: 'Operating Signals', metricsTitle: 'Built for reviewed access and sharper IP decisions.', metrics: metrics([['Partner Review', '64', '+18 under review'], ['Market Signals', '8,420', 'Top market: Bangkok'], ['Offers in Review', '23', '5 active reviews'], ['Opportunity Value', '$1.84M', 'Commercial baseline']]) },
+  about: { eyebrow: 'Platform Overview', title: 'Private infrastructure for Korean content and global live opportunities.', body: 'Tide Bridge focuses on controlled IP access, verified partners, structured offers, market intelligence, and deal readiness review.', cards: [['Private IP Access', 'Live and cultural IP formats are organized for confidential partner review.'], ['Verified Partner Network', 'Partners are reviewed by company profile, track record, references, market coverage, and settlement reliability.'], ['Structured Opportunity Review', 'Each opportunity moves through access review, signal analysis, offer intake, and readiness assessment.']] },
+  platform: { eyebrow: 'Platform', title: 'A private operating system for cross-border IP opportunities.', body: 'Live OS brings access, intelligence, offer intake, and readiness review into one B2B workflow.', modules: [['Private IP Access', 'Controlled access to selected Korean content IP, including K-POP, live, exhibition, performance, and cultural formats.'], ['Offer Management', 'Structured intake for market, venue, capacity, timing, commercial baseline, credibility, and rationale.'], ['Intelligence', 'IP value, market demand, partner trust, and deal readiness signals for early opportunity review.'], ['Network', 'Partner verification across company profile, execution history, references, market coverage, and settlement reliability.'], ['Launchpad', 'North America market-entry support for selected emerging Korean content IP.'], ['Use Cases', 'Partner-specific entry points for promoters, IP owners, brands, investors, and cultural partners.']] },
+  promoters: { eyebrow: 'For Promoters', title: 'Verified access for serious local operators.', body: 'Review selected IP, market fit, and offer context through a private B2B process.', cards: [['Submit structured context', 'Market, venue, sellable capacity, timing, commercial baseline, credibility, and rationale.'], ['Review selected IP', 'Private materials are available only after access and partner fit are reviewed.'], ['Show local capacity', 'Company profile, execution history, references, market coverage, and settlement reliability.'], ['Move by readiness', 'Opportunities advance through structured review, not public request flows.']], cta: 'Request Access' },
+  agencies: { eyebrow: 'For Agencies / IP Owners', title: 'Review global opportunities without open-market exposure.', body: 'Compare partner credibility, market demand, offer quality, and execution risk before granting deeper access.', cards: [['Partner Credibility', 'Review promoter capacity through company profiles, references, and execution history.'], ['Private IP Access', 'Keep artist, commercial, and operating materials controlled until partner access is approved.'], ['Offer Comparison', 'Compare structured opportunity signals across markets before committing resources.'], ['Market Intelligence', 'Use demand and territory signals to prioritize cities, formats, and partner review.']], cta: 'Request Review' },
+  catalog: { eyebrow: 'Private IP Catalog', title: 'Selected IP formats for structured review.', body: 'The catalog is a controlled preview. Detailed artist, commercial, and operating materials are available only to approved partners.', capacity: 'Capacity Signal', base: 'Commercial Baseline', request: 'Request Review', viewDetails: 'Review Details' },
+  apply: { eyebrow: 'Request Access', title: 'Apply for reviewed partner access.', body: 'Share your company profile, market coverage, live projects, and IP interests for private access review.' },
+  fanDemand: { eyebrow: 'Market Signals', title: 'Submit market interest signals.', body: 'Market input helps identify demand patterns. It is not a vote, public request, or show commitment.' },
+  submitOffer: { eyebrow: 'Offer Management', title: 'Submit a structured opportunity.', body: 'Include market, venue, sellable capacity, timing, commercial baseline, credibility, and rationale.' }
 };
 
 const koreanPages = {
   ...englishPages,
-  footer: { ...englishPages.footer, description: 'K-POP 라이브 IP의 글로벌 확장을 위해 검증된 파트너, 비공개 IP 접근, 오퍼 관리, 시장 수요 인텔리전스를 연결하는 비공개 B2B 인프라입니다.' },
-  home: { ...englishPages.home, connectEyebrow: '인프라 레이어', connectTitle: 'K-POP 라이브 IP 글로벌 확장을 위한 검증 기반 운영 레이어.', connectBody: 'Tide Bridge는 파트너 검증, 비공개 IP 접근, 오퍼 관리, 시장 수요 데이터를 하나의 비공개 B2B 워크플로로 구조화합니다.' },
-  about: { ...englishPages.about, eyebrow: '플랫폼 개요', title: '한국 라이브 IP를 구조화된 글로벌 기회로 전환하는 비공개 인프라.', body: '검증된 파트너, 통제된 IP 접근, 구조화된 오퍼, 시장 수요 신호, 딜 준비도 검토에 집중합니다.' },
-  platform: { ...englishPages.platform, eyebrow: 'Platform', title: '글로벌 라이브 IP 기회를 구조화하는 운영 레이어.', body: 'Tide Bridge는 검증된 프로모터, 에이전시, 파트너가 K-POP 라이브 IP 확장을 검토할 수 있는 비공개 B2B 워크플로를 지원합니다.' },
-  promoters: { ...englishPages.promoters, eyebrow: 'For Promoters', title: '검증된 현지 운영 역량을 가진 프로모터를 위한 비공개 접근.', body: 'Tide Bridge는 오픈 마켓플레이스가 아닙니다. 프로모터 접근은 회사 프로필, 실행 이력, 레퍼런스, 시장 커버리지, 정산 신뢰도를 기준으로 검토됩니다.' },
-  agencies: { ...englishPages.agencies, eyebrow: 'For Agencies', title: 'IP를 공개 시장에 노출하지 않고 글로벌 기회를 검토하세요.', body: '한국 에이전시가 신뢰도 있는 프로모터 관심, 시장 수요, 파트너 검증, 초기 기회 준비도를 비교할 수 있도록 지원합니다.' },
-  catalog: { ...englishPages.catalog, body: '공개 카탈로그는 통제된 프리뷰입니다. 상세 아티스트, 상업 조건, 운영 자료는 승인된 파트너에게만 제공됩니다.' },
-  apply: { ...englishPages.apply, body: '파트너 검증을 위해 회사 프로필, 시장 커버리지, 과거 라이브 프로젝트, 한국 엔터테인먼트 IP 관심 분야를 공유해주세요.' },
-  fanDemand: { ...englishPages.fanDemand, body: '팬과 시장 입력은 수요 패턴을 파악하기 위한 신호입니다. 투표, 섭외 요청, 공연 확정 요청이 아닙니다.' },
-  submitOffer: { ...englishPages.submitOffer, body: '도시, 공연장 또는 현지 운영 역량, 판매 가능 규모, 일정, 상업 기준, 파트너 신뢰도, 시장 근거를 포함하면 검토에 도움이 됩니다.' }
+  footer: { ...englishPages.footer, description: '한국 콘텐츠와 글로벌 라이브 기회를 연결하는 비공개 B2B 라이브·컬처 IP 인프라입니다.' },
+  home: { ...englishPages.home, connectEyebrow: 'Infrastructure Layer', connectTitle: '비공개 접근.\n검증된 파트너.\n더 정교한 IP 판단.', connectBody: 'Tide Bridge는 IP 접근, 인텔리전스, 신뢰 검증, 실행 준비도를 하나의 비공개 B2B 흐름으로 정리합니다.' },
+  about: { ...englishPages.about, eyebrow: 'Platform Overview', title: '한국 콘텐츠와 글로벌 라이브 기회를 연결하는 비공개 인프라.', body: '비공개 IP 접근.\n검증된 파트너.\n구조화된 오퍼와 시장 인텔리전스.' },
+  platform: { ...englishPages.platform, eyebrow: 'Platform', title: '크로스보더 IP 기회를 위한 비공개 운영 시스템.', body: '접근, 인텔리전스, 오퍼, 준비도 검토를 하나의 B2B 흐름으로 연결합니다.' },
+  promoters: { ...englishPages.promoters, eyebrow: 'For Promoters', title: '진지한 현지 운영자를 위한 검증된 접근.', body: '선별된 IP, 시장 적합성, 오퍼 맥락을 비공개 B2B 프로세스에서 검토합니다.' },
+  agencies: { ...englishPages.agencies, eyebrow: 'For Agencies / IP Owners', title: 'IP 노출 없이 글로벌 기회를 검토합니다.', body: '파트너 신뢰도, 시장 수요, 오퍼 품질, 실행 리스크를 먼저 비교합니다.' },
+  catalog: { ...englishPages.catalog, body: '카탈로그는 통제된 프리뷰입니다.\n상세 아티스트, 상업, 운영 자료는 승인된 파트너에게만 제공됩니다.' },
+  apply: { ...englishPages.apply, body: '회사 프로필, 시장 커버리지, 라이브 프로젝트, 관심 IP를 공유해주세요.\n비공개 접근 검토에 사용됩니다.' },
+  fanDemand: { ...englishPages.fanDemand, body: '시장 입력은 수요 패턴을 읽기 위한 신호입니다.\n투표, 섭외 요청, 공연 약속이 아닙니다.' },
+  submitOffer: { ...englishPages.submitOffer, body: '시장, 공연장, 판매 가능 규모, 일정, 상업 기준, 신뢰도, 제안 근거를 구조화해 제출하세요.' }
 };
 
 const japanesePages = {
   ...englishPages,
-  footer: { ...englishPages.footer, description: 'K-POPライブIPのグローバル展開に向け、検証済みパートナー、非公開IPアクセス、オファー管理、市場需要インテリジェンスを構造化する非公開B2Bインフラです。' },
-  home: { ...englishPages.home, connectEyebrow: 'インフラレイヤー', connectTitle: 'K-POPライブIPのグローバル展開を支える検証型オペレーティングレイヤー。', connectBody: 'Tide Bridgeはパートナー検証、非公開IPアクセス、オファー管理、市場需要インテリジェンスをひとつの非公開B2Bワークフローに整理します。' },
-  about: { ...englishPages.about, eyebrow: 'プラットフォーム概要', title: '韓国ライブIPを構造化されたグローバル機会へ変換する非公開インフラ。', body: '検証済みパートナー、管理されたIPアクセス、構造化オファー、市場需要シグナル、ディールレディネスレビューに集中します。' },
-  platform: { ...englishPages.platform, title: 'グローバルライブIP機会のための構造化オペレーティングレイヤー。', body: 'Tide Bridgeは、検証済みプロモーター、エージェンシー、パートナーがK-POPライブIP展開を検討するための非公開B2Bワークフローを支援します。' },
-  promoters: { ...englishPages.promoters, title: '実績ある現地運営力を持つプロモーター向けの検証済みアクセス。', body: 'Tide Bridgeはオープンマーケットプレイスではありません。アクセスは会社プロフィール、実績、リファレンス、市場カバレッジ、精算信頼性に基づきレビューされます。' },
-  agencies: { ...englishPages.agencies, title: 'IPを公開市場に出さずにグローバル機会をレビュー。', body: '韓国エージェンシーが信頼できるプロモーター関心、市場需要、パートナー検証、初期機会の準備度を比較できるよう支援します。' },
+  footer: { ...englishPages.footer, description: '韓国コンテンツとグローバルライブ機会をつなぐ非公開B2Bライブ・カルチャーIPインフラです。' },
+  home: { ...englishPages.home, connectEyebrow: 'Infrastructure Layer', connectTitle: 'IPアクセス、インテリジェンス、検証済み実行をつなぐ非公開レイヤー。', connectBody: 'Tide BridgeはIPオーナー、プロモーター、ブランド、産業パートナーを管理されたアクセスと構造化レビューで接続します。' },
+  about: { ...englishPages.about, eyebrow: 'Platform Overview', title: '韓国コンテンツとグローバルライブ機会のための非公開インフラ。', body: '管理されたIPアクセス、検証済みパートナー、構造化オファー、市場インテリジェンス、ディールレディネスに集中します。' },
+  platform: { ...englishPages.platform, title: 'クロスボーダーIP機会のための非公開オペレーティングシステム。', body: 'Live OSはアクセス、インテリジェンス、オファー受付、準備度レビューをひとつのB2Bワークフローにまとめます。' },
+  promoters: { ...englishPages.promoters, title: '本格的な現地オペレーターのための検証済みアクセス。', body: '選定IP、市場適合性、オファー文脈を非公開B2Bプロセスでレビューします。' },
+  agencies: { ...englishPages.agencies, title: 'IPを公開市場に出さずにグローバル機会をレビュー。', body: '深いアクセスを許可する前に、パートナー信頼性、市場需要、オファー品質、実行リスクを比較します。' },
   catalog: { ...englishPages.catalog, body: '公開カタログは管理されたプレビューです。詳細なアーティスト、商業条件、運営資料は承認済みパートナーにのみ提供されます。' },
   apply: { ...englishPages.apply, body: 'パートナー検証のため、会社プロフィール、市場カバレッジ、過去のライブプロジェクト、韓国エンタメIPへの関心を共有してください。' },
-  fanDemand: { ...englishPages.fanDemand, body: 'ファンと市場からの入力は需要パターンを把握するためのシグナルです。投票、出演依頼、開催保証ではありません。' },
+  fanDemand: { ...englishPages.fanDemand, body: '市場からの入力は需要パターンを把握するためのシグナルです。投票、出演依頼、開催約束ではありません。' },
   submitOffer: { ...englishPages.submitOffer, body: '都市、会場または現地運営力、販売可能規模、日程、商業基準、パートナー信頼性、市場根拠を含めてください。' }
 };
 
 const chinesePages = {
   ...englishPages,
-  footer: { ...englishPages.footer, description: '面向 K-POP 现场 IP 全球扩张的私密 B2B 基础设施，结构化验证伙伴、私密 IP 访问、报价管理和市场需求情报。' },
-  home: { ...englishPages.home, connectEyebrow: '基础设施层', connectTitle: '服务 K-POP 现场 IP 全球扩张的验证型运营层。', connectBody: 'Tide Bridge 将伙伴验证、私密 IP 访问、报价管理和市场需求情报组织为一个私密 B2B 工作流。' },
-  about: { ...englishPages.about, eyebrow: '平台概览', title: '将韩国现场 IP 转化为结构化全球机会的私密基础设施。', body: '平台聚焦验证伙伴、受控 IP 访问、结构化报价、市场需求信号和交易准备度审核。' },
-  platform: { ...englishPages.platform, title: '面向全球现场 IP 机会的结构化运营层。', body: 'Tide Bridge 支持已验证主办方、经纪公司和伙伴评估 K-POP 现场 IP 扩张的私密 B2B 工作流。' },
-  promoters: { ...englishPages.promoters, title: '面向具备本地执行能力主办方的验证访问。', body: 'Tide Bridge 不是开放市场。访问会根据公司资料、过往记录、推荐证明、市场覆盖和结算可靠性进行审核。' },
-  agencies: { ...englishPages.agencies, title: '无需将 IP 暴露给开放市场，即可审核全球机会。', body: 'Tide Bridge 帮助韩国经纪公司比较可信主办方兴趣、市场需求、伙伴验证和早期机会准备度。' },
+  footer: { ...englishPages.footer, description: '连接韩国内容与全球现场机会的私密 B2B 现场与文化 IP 基础设施。' },
+  home: { ...englishPages.home, connectEyebrow: 'Infrastructure Layer', connectTitle: '用于 IP 访问、情报和验证执行的私密层。', connectBody: 'Tide Bridge 通过受控访问和结构化机会审核连接 IP 持有方、主办方、品牌与行业伙伴。' },
+  about: { ...englishPages.about, eyebrow: 'Platform Overview', title: '面向韩国内容与全球现场机会的私密基础设施。', body: '聚焦受控 IP 访问、验证伙伴、结构化报价、市场情报和交易准备度审核。' },
+  platform: { ...englishPages.platform, title: '面向跨境 IP 机会的私密运营系统。', body: 'Live OS 将访问、情报、报价录入和准备度审核整合为一个 B2B 工作流。' },
+  promoters: { ...englishPages.promoters, title: '面向严肃本地运营方的验证访问。', body: '通过私密 B2B 流程审核选定 IP、市场匹配和报价上下文。' },
+  agencies: { ...englishPages.agencies, title: '无需公开暴露 IP，即可审核全球机会。', body: '在开放更深访问前，比较伙伴可信度、市场需求、报价质量和执行风险。' },
   catalog: { ...englishPages.catalog, body: '公开目录是受控预览。详细艺人、商业和运营资料仅向获批伙伴开放。' },
   apply: { ...englishPages.apply, body: '请提交公司资料、市场覆盖、过往现场项目以及对韩国娱乐 IP 的兴趣，用于伙伴验证。' },
-  fanDemand: { ...englishPages.fanDemand, body: '粉丝与市场输入用于识别需求模式。这不是投票、艺人预约或演出保证。' },
+  fanDemand: { ...englishPages.fanDemand, body: '市场输入用于识别需求模式。这不是投票、艺人邀约或演出承诺。' },
   submitOffer: { ...englishPages.submitOffer, body: '请包含城市、场馆或本地执行能力、可销售容量、档期、商业基准、伙伴可信度和市场依据。' }
 };
 
 export const dictionaries: Record<Locale, any> = {
-  ko: { localeName: '한국어', shortName: 'KO', metadata: { title: 'Tide Bridge Live OS', description: 'K-POP 라이브 IP 글로벌 확장을 위한 비공개 B2B 인프라.' }, nav: sharedNav, hero: { ...sharedHeroCopy, supportingBody: 'Tide Bridge는 K-POP 및 한국 엔터테인먼트 라이브 IP의 글로벌 확장을 위해 파트너 검증, 비공개 IP 접근, 오퍼 관리, 시장 수요 데이터를 구조화하는 비공개 B2B 인프라입니다.' }, ...koreanPages, forms: forms('ko', common.ko) },
-  en: { localeName: 'English', shortName: 'EN', metadata: { title: 'Tide Bridge Live OS', description: 'Private B2B infrastructure for global K-POP live IP expansion.' }, nav: sharedNav, hero: sharedHeroCopy, ...englishPages, forms: forms('en', common.en) },
-  ja: { localeName: '日本語', shortName: 'JA', metadata: { title: 'Tide Bridge Live OS', description: 'K-POPライブIPのグローバル展開を支える非公開B2Bインフラ。' }, nav: sharedNav, hero: sharedHeroCopy, ...japanesePages, forms: forms('ja', common.ja) },
-  zh: { localeName: '中文', shortName: 'ZH', metadata: { title: 'Tide Bridge Live OS', description: '面向 K-POP 现场 IP 全球扩张的私密 B2B 基础设施。' }, nav: sharedNav, hero: sharedHeroCopy, ...chinesePages, forms: forms('zh', common.zh) }
+  ko: { localeName: '한국어', shortName: 'KO', metadata: { title: 'Tide Bridge Live OS', description: '한국 콘텐츠와 글로벌 라이브 기회를 연결하는 비공개 B2B 라이브·컬처 IP 인프라.' }, nav: sharedNav, hero: { ...sharedHeroCopy, supportingBody: '비공개 IP 접근.\n검증된 파트너.\n더 정교한 크로스보더 IP 판단.' }, ...koreanPages, forms: forms('ko', common.ko) },
+  en: { localeName: 'English', shortName: 'EN', metadata: { title: 'Tide Bridge Live OS', description: 'Private B2B live and cultural IP infrastructure for Korean content and global live opportunities.' }, nav: sharedNav, hero: sharedHeroCopy, ...englishPages, forms: forms('en', common.en) },
+  ja: { localeName: '日本語', shortName: 'JA', metadata: { title: 'Tide Bridge Live OS', description: '韓国コンテンツとグローバルライブ機会をつなぐ非公開B2Bライブ・カルチャーIPインフラ。' }, nav: sharedNav, hero: sharedHeroCopy, ...japanesePages, forms: forms('ja', common.ja) },
+  zh: { localeName: '中文', shortName: 'ZH', metadata: { title: 'Tide Bridge Live OS', description: '连接韩国内容与全球现场机会的私密 B2B 现场与文化 IP 基础设施。' }, nav: sharedNav, hero: sharedHeroCopy, ...chinesePages, forms: forms('zh', common.zh) }
 };

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LaunchpadProgramFlow } from '@/components/ProductDemos';
 import { launchpadPages } from '@/lib/launchpad';
 import type { Locale } from '@/lib/i18n';
 
@@ -41,7 +42,7 @@ export function LaunchpadPage({ locale }: { locale: Locale }) {
           <div className="max-w-4xl">
             <p className="label mb-6">{copy.hero.eyebrow}</p>
             <h1 className="text-5xl font-semibold leading-[0.95] text-ivory md:text-8xl">{copy.hero.title}</h1>
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-ivory/65">{copy.hero.body}</p>
+            <p className="mt-8 max-w-3xl whitespace-pre-line text-lg leading-8 text-ivory/65">{copy.hero.body}</p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Link href={`${prefix}/apply`} className="btn-primary text-center">{copy.hero.primary}</Link>
               <Link href={`${prefix}/agencies`} className="btn-secondary text-center">{copy.hero.secondary}</Link>
@@ -49,6 +50,8 @@ export function LaunchpadPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      <LaunchpadProgramFlow />
 
       <section className="mx-auto max-w-7xl px-5 py-20">
         <div className="mb-10 max-w-3xl">

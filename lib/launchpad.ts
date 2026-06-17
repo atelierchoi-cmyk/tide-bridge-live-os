@@ -42,14 +42,14 @@ type LaunchpadCopy = {
 const sharedLaunchpad: LaunchpadCopy = {
   hero: {
     eyebrow: 'TIDE BRIDGE LAUNCHPAD',
-    title: 'North America Market Entry for Emerging Korean IP.',
-    body: 'A private market-entry program for emerging Korean IP — combining creative partners, local promotion, live showcases, and market intelligence.',
+    title: 'North America market entry for selected Korean content IP.',
+    body: 'A private market-entry program combining creative partners, local promotion, showcase testing, and market intelligence.',
     primary: 'Request Launchpad Review',
     secondary: 'Discuss Market Entry Pilot'
   },
   audience: {
     title: 'For emerging Korean IP with global potential.',
-    body: 'Built for projects that need proof before scale — not only established K-pop tours.',
+    body: 'Built for projects that need market signal before scale, including but not limited to K-pop.',
     cards: [
       ['Rookie K-pop and music groups', 'Early-stage music IP preparing for overseas response testing.'],
       ['Actor and celebrity fan-event IP', 'Fan meetings, appearances, and audience-development formats.'],
@@ -104,8 +104,8 @@ const sharedLaunchpad: LaunchpadCopy = {
     ]
   },
   note: {
-    title: 'Market-entry support, not a guaranteed outcome.',
-    body: 'Launchpad does not guarantee commercial success, charts, ticket sales, label deals, or investment outcomes. Scope, rights participation, and terms are reviewed case by case.'
+    title: 'Market-entry support, not assured outcomes.',
+    body: 'Launchpad does not assure commercial success, charts, label deals, investment outcomes, or market adoption. Scope, rights participation, and terms are reviewed case by case.'
   }
 };
 
@@ -114,11 +114,11 @@ export const launchpadPages: Record<Locale, LaunchpadCopy> = {
     ...sharedLaunchpad,
     hero: {
       ...sharedLaunchpad.hero,
-      body: '신인 및 성장 단계의 한국 IP를 위한 비공개 북미 시장 진입 프로그램입니다. 크리에이티브 파트너, 현지 프로모션, 쇼케이스, 시장 인텔리전스를 연결합니다.'
+      body: '선별된 한국 콘텐츠 IP를 위한\n비공개 북미 시장 진입 프로그램.\n\n크리에이티브 파트너, 현지 프로모션,\n쇼케이스, 시장 인텔리전스를 연결합니다.'
     },
     audience: {
       ...sharedLaunchpad.audience,
-      body: '대형 K-pop 투어뿐 아니라, 확장 전 시장 반응 검증이 필요한 성장 단계 IP를 위한 구조입니다.'
+      body: '확장 전 시장 반응을 확인해야 하는 성장 단계 IP를 위한 구조입니다.'
     },
     services: {
       ...sharedLaunchpad.services,

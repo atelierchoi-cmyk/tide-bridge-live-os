@@ -63,7 +63,7 @@ const moduleItems: Card[] = [
   },
   {
     title: 'Market Demand Signals',
-    body: 'Early demand indicators by market, city, audience, and comparable event activity.',
+    body: 'Early demand indicators by market, city, audience, and comparable activity.',
     points: ['Demand signal', 'Market heat', 'Audience interest', 'Promoter interest', 'Comparable activity', 'Venue fit']
   },
   {
@@ -104,8 +104,8 @@ const english: IntelligenceCopy = {
   hero: {
     eyebrow: 'LIVE & CULTURAL IP INTELLIGENCE',
     title: 'Value the IP. Verify the partner. Structure the opportunity.',
-    body: 'Tide Bridge Intelligence turns IP value, market demand, partner credibility, and deal readiness into a private B2B decision layer.',
-    support: 'Built for cross-border live and cultural IP decisions — before rights, capital, or private materials are exposed.'
+    body: 'A private decision layer for IP value, market demand, partner trust, and deal readiness.',
+    support: 'Built for cross-border live and cultural IP decisions before rights, capital, or private materials are exposed.'
   },
   architecture: {
     eyebrow: 'Product Architecture',
@@ -121,7 +121,7 @@ const english: IntelligenceCopy = {
   modules: {
     eyebrow: 'Intelligence Modules',
     title: 'Decision support before access, offers, and execution.',
-    body: 'The dashboard structures fragmented market and partner signals without claiming exact valuation or guaranteed outcomes.',
+    body: 'The dashboard structures fragmented market and partner signals without claiming exact valuation or assured outcomes.',
     items: moduleItems
   },
   subscribe: {
@@ -158,10 +158,10 @@ const english: IntelligenceCopy = {
   },
   trust: {
     eyebrow: 'Trust Notes',
-    title: 'Decision support, not guarantees.',
+    title: 'Decision support, not assured outcomes.',
     notes: [
-      'Tide Bridge Intelligence supports early-stage commercial review. It does not guarantee ticket sales, revenue, artist availability, approvals, or deal execution.',
-      'Partner verification is based on submitted information, track record, references, and internal review. It is not a government certification or legal guarantee.',
+      'Tide Bridge Intelligence supports early-stage commercial review. It does not assure revenue, artist availability, approvals, or deal execution.',
+      'Partner verification is based on submitted information, track record, references, and internal review. It is not a government certification or legal assurance.',
       'Comparable benchmarks should use anonymized or permissioned references and range-based estimates, not confidential third-party deal data.'
     ]
   }
@@ -173,7 +173,7 @@ export const intelligenceDictionaries: Record<Locale, IntelligenceCopy> = {
     ...english,
     hero: {
       ...english.hero,
-      support: 'IP 가치, 시장 수요, 파트너 신뢰도, 딜 리스크를 구조화해 더 안전한 크로스보더 IP 판단을 지원합니다.'
+      support: 'IP 가치.\n시장 수요.\n파트너 신뢰도.\n딜 준비도.'
     },
     architecture: {
       ...english.architecture,
@@ -183,7 +183,7 @@ export const intelligenceDictionaries: Record<Locale, IntelligenceCopy> = {
     modules: {
       ...english.modules,
       title: '접근, 오퍼, 실행 이전의 판단 지원.',
-      body: '시장과 파트너 신호를 구조화하되, 정확한 가치 산정이나 결과 보장은 주장하지 않습니다.'
+      body: '시장과 파트너 신호를 구조화하되, 정확한 가치 산정이나 결과 확정은 주장하지 않습니다.'
     },
     subscribe: {
       ...english.subscribe,
