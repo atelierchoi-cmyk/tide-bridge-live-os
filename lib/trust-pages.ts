@@ -53,7 +53,7 @@ export const trustPages: Record<Locale, { publicSector: TrustPage; verifiedNetwo
     verifiedNetwork: {
       eyebrow: 'Verified Global Promoter Network',
       title: '한국 IP 홀더와 글로벌 프로모터가 안심할 수 있는 파트너 검증 프로세스.',
-      body: 'Tide Bridge is not an open marketplace. Access is reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
+      body: 'Access is controlled and reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
       notice: 'Verified badge는 Tide Bridge 내부 운영 배지이며, 정부 또는 공공기관 인증을 의미하지 않습니다.',
       sections: [
         ['1. Application', '회사, 담당자, 운영 국가, 도시, 과거 프로젝트, 웹사이트 또는 회사 프로필을 접수합니다.'],
@@ -95,7 +95,7 @@ export const trustPages: Record<Locale, { publicSector: TrustPage; verifiedNetwo
     verifiedNetwork: {
       eyebrow: 'Verified Global Promoter Network',
       title: 'A partner verification process for global promoters and Korean IP holders.',
-      body: 'Tide Bridge is not an open marketplace. Access is reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
+      body: 'Access is controlled and reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
       notice: 'The verified badge is an internal Tide Bridge operating badge. It is not a government or public-sector certification.',
       sections: [
         ['1. Application', 'Collect company, contact, operating country, city, project history, website, or company profile.'],
@@ -137,7 +137,7 @@ export const trustPages: Record<Locale, { publicSector: TrustPage; verifiedNetwo
     verifiedNetwork: {
       eyebrow: 'Verified Global Promoter Network',
       title: 'グローバルプロモーターと韓国IPホルダーのためのパートナー検証プロセス。',
-      body: 'Tide Bridge is not an open marketplace. Access is reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
+      body: 'Access is controlled and reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
       notice: 'Verified badgeはTide Bridge内部の運営バッジであり、政府または公共機関の認証ではありません。',
       sections: [
         ['1. Application', '会社、担当者、運営国、都市、過去プロジェクト、Webサイトまたは会社プロフィールを受け付けます。'],
@@ -179,7 +179,7 @@ export const trustPages: Record<Locale, { publicSector: TrustPage; verifiedNetwo
     verifiedNetwork: {
       eyebrow: 'Verified Global Promoter Network',
       title: '面向全球主办方和韩国 IP 持有方的伙伴验证流程。',
-      body: 'Tide Bridge is not an open marketplace. Access is reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
+      body: 'Access is controlled and reviewed through company profiles, track records, references, market coverage, and settlement reliability.',
       notice: 'Verified badge 是 Tide Bridge 内部运营徽章，不代表政府或公共机构认证。',
       sections: [
         ['1. Application', '收集公司、联系人、运营国家、城市、项目历史、网站或公司资料。'],
