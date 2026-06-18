@@ -20,6 +20,10 @@ function localizedPath(pathname: string, nextLocale: Locale) {
   return `/${nextLocale}${pathname === '/' ? '' : pathname}`;
 }
 
+function isCinematicHomePath(pathname: string) {
+  return pathname === '/' || locales.some((locale) => pathname === `/${locale}`);
+}
+
 type NavItem = {
   label: string;
   href?: string;
@@ -28,6 +32,8 @@ type NavItem = {
 
 export function SiteHeader() {
   const pathname = usePathname() || `/${defaultLocale}`;
+  if (isCinematicHomePath(pathname)) return null;
+
   const locale = localeFromPathname(pathname);
   const prefix = `/${locale}`;
   const navItems: NavItem[] = [
