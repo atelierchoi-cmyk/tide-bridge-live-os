@@ -10,11 +10,11 @@ import { ipPackages } from '@/lib/data';
 
 function CardGrid({ items, columns = 3 }: { items: string[][]; columns?: 2 | 3 }) {
   return (
-    <div className={`grid gap-5 ${columns === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+    <div className={`grid gap-5 ${columns === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}`}>
       {items.map(([title, body]) => (
         <div key={title} className="card p-6">
-          <h3 className="text-2xl font-semibold tracking-[-0.03em]">{title}</h3>
-          <p className="mt-4 text-sm leading-7 text-ivory/55">{body}</p>
+          <h3 className="cjk-copy whitespace-pre-line text-2xl font-semibold tracking-[-0.03em]">{title}</h3>
+          <p className="cjk-copy mt-4 whitespace-pre-line text-sm leading-7 text-ivory/55">{body}</p>
         </div>
       ))}
     </div>
@@ -26,14 +26,14 @@ export function LocalizedHome({ dict, locale }: { dict: any; locale: string }) {
     <>
       <Hero copy={dict.hero} locale={locale} />
       <Section eyebrow={dict.home.connectEyebrow} title={dict.home.connectTitle} body={dict.home.connectBody}>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-3">
           {dict.home.connectItems.map((item: string) => (
-            <div key={item} className="card p-6 text-xl font-semibold tracking-[-0.03em] text-ivory">{item}</div>
+            <div key={item} className="cjk-copy card whitespace-pre-line p-6 text-xl font-semibold tracking-[-0.03em] text-ivory">{item}</div>
           ))}
         </div>
       </Section>
       <Section eyebrow={dict.home.metricsEyebrow} title={dict.home.metricsTitle}>
-        <div className="grid gap-4 md:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {dict.home.metrics.map((metric: { label: string; value: string; delta: string }) => <StatCard key={metric.label} {...metric} />)}
         </div>
       </Section>
@@ -55,8 +55,8 @@ export function LocalizedPlatform({ dict, locale }: { dict: any; locale: string 
       <CardGrid items={dict.platform.modules} />
       <div className="mt-8 rounded border border-champagne/25 bg-champagne/[0.06] p-6">
         <p className="label mb-3">Intelligence Layer</p>
-        <h3 className="text-2xl font-semibold tracking-[-0.03em] text-ivory">IP value signals, market demand, partner trust, and deal readiness.</h3>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-ivory/60">
+        <h3 className="cjk-copy whitespace-pre-line text-2xl font-semibold tracking-[-0.03em] text-ivory">IP value signals, market demand, partner trust, and deal readiness.</h3>
+        <p className="cjk-copy mt-4 max-w-3xl whitespace-pre-line text-sm leading-7 text-ivory/60">
           Tide Bridge Intelligence adds the decision layer for cross-border live and cultural IP opportunities before private access, offers, and deeper deal review.
         </p>
         <Link href={`/${locale}/intelligence`} className="btn-secondary mt-6 inline-flex">Explore Intelligence</Link>

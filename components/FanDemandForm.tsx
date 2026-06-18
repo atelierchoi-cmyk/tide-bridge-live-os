@@ -106,17 +106,17 @@ export function FanDemandForm({ copy }: { copy: FanDemandFormCopy }) {
           {copy.ticketRanges.map((ticketRange) => <option key={ticketRange}>{ticketRange}</option>)}
         </select>
       </div>
-      <label className="md:col-span-2 flex items-center gap-3 text-sm text-ivory/65">
+      <label className="cjk-copy md:col-span-2 flex items-center gap-3 whitespace-pre-line text-sm text-ivory/65">
         <input type="checkbox" checked={form.vipInterest} onChange={(e) => setForm({ ...form, vipInterest: e.target.checked })} />
         {copy.vip}
       </label>
-      <label className="md:col-span-2 flex items-start gap-3 text-sm leading-6 text-ivory/65">
+      <label className="cjk-copy md:col-span-2 flex items-start gap-3 whitespace-pre-line text-sm leading-6 text-ivory/65">
         <input className="mt-1" type="checkbox" checked={form.consent} onChange={(e) => setForm({ ...form, consent: e.target.checked })} />
         {copy.consent}
       </label>
       <div className="md:col-span-2 flex flex-wrap items-center gap-4">
         <button className="btn-primary" type="submit" disabled={status === 'loading'}>{status === 'loading' ? copy.loading : copy.submit}</button>
-        {message ? <p className={`text-sm ${status === 'error' ? 'text-clay' : 'text-champagne'}`} aria-live="polite">{message}</p> : null}
+        {message ? <p className={`cjk-copy whitespace-pre-line text-sm ${status === 'error' ? 'text-clay' : 'text-champagne'}`} aria-live="polite">{message}</p> : null}
       </div>
     </form>
   );

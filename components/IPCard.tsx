@@ -26,16 +26,16 @@ export function IPCard({
         <p className="label">{item.category}</p>
         <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-ivory/45">{accessLabel}</span>
       </div>
-      <h3 className="mt-5 text-2xl font-semibold tracking-[-0.03em] text-ivory">{item.title}</h3>
-      <p className="mt-2 text-sm text-champagne/80">{item.format}</p>
-      <p className="mt-5 flex-1 text-sm leading-7 text-ivory/55">{item.summary}</p>
+      <h3 className="cjk-copy mt-5 whitespace-pre-line text-2xl font-semibold tracking-[-0.03em] text-ivory">{item.title}</h3>
+      <p className="cjk-copy mt-2 whitespace-pre-line text-sm text-champagne/80">{item.format}</p>
+      <p className="cjk-copy mt-5 flex-1 whitespace-pre-line text-sm leading-7 text-ivory/55">{item.summary}</p>
       <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
         <div className="rounded-2xl bg-white/[0.04] p-4">
-          <p className="text-ivory/40">{copy.capacity}</p>
-          <p className="mt-1 font-semibold text-ivory">{item.capacityRange}</p>
+          <p className="cjk-copy text-ivory/40">{copy.capacity}</p>
+          <p className="cjk-copy mt-1 font-semibold text-ivory">{item.capacityRange}</p>
         </div>
         <div className="rounded-2xl bg-white/[0.04] p-4">
-          <p className="text-ivory/40">{copy.base}</p>
+          <p className="cjk-copy text-ivory/40">{copy.base}</p>
           <p className="mt-1 font-semibold text-ivory">{money(item.baseGuarantee, item.currency)}</p>
         </div>
       </div>

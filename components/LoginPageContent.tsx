@@ -4,8 +4,8 @@ import { Section } from '@/components/Section';
 const copy = {
   ko: {
     eyebrow: 'Private Access',
-    title: '검증된 파트너를 위한 비공개 인프라 접근.',
-    body: '정식 인증은 다음 개발 단계에서 연결됩니다. MVP 검토용으로 비공개 파트너 워크플로와 운영 콘솔 프리뷰를 확인할 수 있습니다.',
+    title: '검증된 파트너.\n비공개 인프라 접근.',
+    body: '정식 인증은 다음 단계에서 연결됩니다.\nMVP에서는 파트너 워크플로와 운영 콘솔을 프리뷰합니다.',
     partner: 'Partner Portal Preview',
     admin: 'Admin Console Preview'
   },
@@ -18,15 +18,15 @@ const copy = {
   },
   ja: {
     eyebrow: 'Private Access',
-    title: '検証済みパートナー向けの非公開インフラアクセス。',
-    body: '認証は次の開発段階で接続します。MVP確認では、非公開パートナーワークフローと運営コントロールをプレビューできます。',
+    title: '検証済みパートナー。\n非公開インフラアクセス。',
+    body: '認証は次の段階で接続します。\nMVPではパートナーワークフローと運営コンソールをプレビューします。',
     partner: 'Partner Portal Preview',
     admin: 'Admin Console Preview'
   },
   zh: {
     eyebrow: 'Private Access',
-    title: '面向已验证伙伴的私密基础设施访问。',
-    body: '认证将在下一阶段接入。MVP 审阅可预览私密伙伴工作流和运营控制台。',
+    title: '已验证伙伴。\n非公开基础设施访问。',
+    body: '认证将在下一阶段接入。\nMVP 可预览伙伴工作流和运营控制台。',
     partner: 'Partner Portal Preview',
     admin: 'Admin Console Preview'
   }

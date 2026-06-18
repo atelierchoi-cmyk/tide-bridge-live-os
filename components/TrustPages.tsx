@@ -11,14 +11,14 @@ function TrustPage({ locale, pageKey }: { locale: Locale; pageKey: PageKey }) {
 
   return (
     <Section eyebrow={copy.eyebrow} title={copy.title} body={copy.body}>
-      <div className="rounded-2xl border border-champagne/25 bg-champagne/[0.06] p-5 text-sm leading-7 text-ivory/70">
+      <div className="cjk-copy whitespace-pre-line rounded-2xl border border-champagne/25 bg-champagne/[0.06] p-5 text-sm leading-7 text-ivory/70">
         {copy.notice}
       </div>
-      <div className="mt-6 grid gap-5 md:grid-cols-2">
+      <div className="mt-6 grid gap-5 lg:grid-cols-2">
         {copy.sections.map(([title, body]) => (
           <div key={title} className="card p-6">
-            <h3 className="text-xl font-semibold tracking-[-0.03em] text-ivory">{title}</h3>
-            <p className="mt-4 text-sm leading-7 text-ivory/55">{body}</p>
+            <h3 className="cjk-copy whitespace-pre-line text-xl font-semibold tracking-[-0.03em] text-ivory">{title}</h3>
+            <p className="cjk-copy mt-4 whitespace-pre-line text-sm leading-7 text-ivory/55">{body}</p>
           </div>
         ))}
       </div>

@@ -22,7 +22,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-ivory">Tide Bridge Live OS</p>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-ivory/55">{dict.footer.description}</p>
+          <p className="cjk-copy mt-4 max-w-xl whitespace-pre-line text-sm leading-7 text-ivory/55">{dict.footer.description}</p>
         </div>
         <div className="space-y-3 text-sm text-ivory/60">
           <p className="label">{dict.footer.platform}</p>

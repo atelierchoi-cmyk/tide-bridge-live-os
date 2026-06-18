@@ -17,6 +17,54 @@ body {
   color: var(--foreground);
 }
 
+.cjk-locale {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+.cjk-locale :where(h1, h2, h3, h4, p, li, span, a, button, label, input, textarea, select),
+.cjk-copy {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+.cjk-locale :where(h1, h2, h3) {
+  line-height: 1.08;
+}
+
+.cjk-locale h1.cjk-copy {
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+}
+
+.cjk-locale h2.cjk-copy {
+  font-size: clamp(2rem, 6.5vw, 3.75rem);
+}
+
+.cjk-locale h3.cjk-copy {
+  font-size: clamp(1.25rem, 4.5vw, 1.875rem);
+}
+
+.cjk-locale :where(p, li, label) {
+  line-height: 1.8;
+}
+
+.cjk-locale .grid > *,
+.cjk-locale .card {
+  min-width: 0;
+}
+
+.cjk-locale .label {
+  letter-spacing: 0.16em;
+}
+
+@media (max-width: 640px) {
+  .cjk-locale .label {
+    letter-spacing: 0.12em;
+  }
+}
+
 ::selection {
   background: rgba(215, 181, 109, 0.35);
 }
@@ -30,7 +78,7 @@ body {
 }
 
 .card {
-  @apply rounded-3xl border border-white/10 bg-white/[0.04] shadow-glow;
+  @apply min-w-0 rounded-3xl border border-white/10 bg-white/[0.04] shadow-glow;
 }
 
 .btn-primary {

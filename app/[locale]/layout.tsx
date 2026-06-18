@@ -19,5 +19,9 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
 export default function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
   if (!isLocale(params.locale)) notFound();
 
-  return children;
+  return (
+    <div lang={params.locale} className={params.locale === 'en' ? undefined : 'cjk-locale'}>
+      {children}
+    </div>
+  );
 }
