@@ -10,8 +10,14 @@ function localeFromPathname(pathname: string): Locale {
   return isLocale(segment) ? segment : defaultLocale;
 }
 
+function isCinematicHomePath(pathname: string) {
+  return pathname === '/' || pathname === '/ko' || pathname === '/en' || pathname === '/ja' || pathname === '/zh';
+}
+
 export function SiteFooter() {
   const pathname = usePathname() || `/${defaultLocale}`;
+  if (isCinematicHomePath(pathname)) return null;
+
   const locale = localeFromPathname(pathname);
   const dict = getDictionary(locale);
   const trust = trustNav[locale];
