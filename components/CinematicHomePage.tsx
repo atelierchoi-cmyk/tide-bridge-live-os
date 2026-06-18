@@ -13,11 +13,16 @@ type CinematicCopy = {
     liveOs: string;
     partnership: string;
   };
+  nav: string[][];
   mood: string[][];
   bridge: string[][];
   layers: string[][];
-  markets: string[];
-  final: string[];
+  markets: string[][];
+  final: {
+    lines: string[];
+    primary: string;
+    secondary: string;
+  };
 };
 
 const media = {
@@ -27,7 +32,9 @@ const media = {
     '/media/tide-bridge-mood-stage.jpg',
     '/media/tide-bridge-mood-broadcast.jpg',
     '/media/tide-bridge-mood-city.jpg',
-    '/media/tide-bridge-mood-backstage.jpg'
+    '/media/tide-bridge-mood-backstage.jpg',
+    '/media/tide-bridge-mood-audience.jpg',
+    '/media/tide-bridge-mood-venue.jpg'
   ],
   markets: [
     '/media/market-korea.jpg',
@@ -42,30 +49,50 @@ const media = {
 const baseCopy: CinematicCopy = {
   locale: 'root',
   eyebrow: 'TIDE BRIDGE',
-  title: 'Global Live & Cultural IP Infrastructure',
+  title: 'Global Live & Cultural IP Bridge',
   lines: ['Korean Content.', 'Global Live IP.', 'One Cross-Border Bridge.'],
   cta: {
     liveOs: 'Enter Live OS',
     partnership: 'Request Partnership'
   },
+  nav: [
+    ['Live OS', '/live-os'],
+    ['Intelligence', '/intelligence'],
+    ['Launchpad', '/launchpad'],
+    ['Network', '/verified-network'],
+    ['Partnership', '/apply']
+  ],
   mood: [
-    ['Live IP', 'Stage formats built for global movement.'],
-    ['Broadcast', 'Signals, audiences, territories.'],
-    ['Culture', 'Korean content in international rooms.'],
-    ['Network', 'Partners with market presence.']
+    ['Live Stage', 'Light, scale, signal.'],
+    ['Broadcast', 'Frames built for reach.'],
+    ['Backstage', 'Where movement begins.'],
+    ['Global City', 'Markets after dark.'],
+    ['Audience', 'Crowd energy, local pulse.'],
+    ['Venue', 'Rooms ready for culture.']
   ],
   bridge: [
     ['Korean Content', 'Tide Bridge', 'Global Markets'],
     ['Global Live IP', 'Tide Bridge', 'Korea']
   ],
   layers: [
-    ['Live OS', 'Private operating layer'],
-    ['Intelligence', 'Market signal layer'],
-    ['Launchpad', 'Market entry layer'],
-    ['Verified Network', 'Partner trust layer']
+    ['Live OS', 'Private B2B infrastructure for live and cultural IP opportunities.'],
+    ['Intelligence', 'Market signals, IP value, partner trust, and deal readiness.'],
+    ['Launchpad', 'Market-entry support for emerging Korean IP.'],
+    ['Verified Network', 'Reviewed partners for cross-border execution.']
   ],
-  markets: ['Korea', 'Japan', 'Southeast Asia', 'North America', 'Middle East', 'Europe'],
-  final: ['Global stages.', 'Cultural IP.', 'One bridge.']
+  markets: [
+    ['Korea', 'IP Export'],
+    ['Japan', 'Live Import'],
+    ['Southeast Asia', 'Market Entry'],
+    ['North America', 'Partner Network'],
+    ['Middle East', 'Promotion'],
+    ['Europe', 'IP Export']
+  ],
+  final: {
+    lines: ['Build the next bridge', 'for live and cultural IP.'],
+    primary: 'Request Partnership',
+    secondary: 'Enter Live OS'
+  }
 };
 
 const copyByLocale: Record<HomeLocale, CinematicCopy> = {
@@ -79,24 +106,37 @@ const copyByLocale: Record<HomeLocale, CinematicCopy> = {
       liveOs: 'Live OS 입장',
       partnership: '파트너십 요청'
     },
+    nav: [
+      ['Live OS', '/live-os'],
+      ['Intelligence', '/intelligence'],
+      ['Launchpad', '/launchpad'],
+      ['Network', '/verified-network'],
+      ['Partnership', '/apply']
+    ],
     mood: [
-      ['Live IP', '글로벌 무대를 위한 라이브 포맷.'],
-      ['Broadcast', '신호, 관객, 시장 권역.'],
-      ['Culture', '국제 무대 위의 한국 콘텐츠.'],
-      ['Network', '시장 존재감을 가진 파트너.']
+      ['Live Stage', '빛, 스케일, 신호.'],
+      ['Broadcast', '확장을 위한 프레임.'],
+      ['Backstage', '움직임이 시작되는 곳.'],
+      ['Global City', '밤의 글로벌 시장.'],
+      ['Audience', '관객 에너지와 현지 감각.'],
+      ['Venue', '컬처를 위한 공간.']
     ],
     bridge: [
       ['한국 콘텐츠', 'Tide Bridge', '글로벌 시장'],
       ['글로벌 라이브 IP', 'Tide Bridge', '한국']
     ],
     layers: [
-      ['Live OS', '비공개 운영 레이어'],
-      ['Intelligence', '시장 신호 레이어'],
-      ['Launchpad', '시장 진입 레이어'],
-      ['Verified Network', '파트너 신뢰 레이어']
+      ['Live OS', '라이브·컬처 IP 기회를 위한 비공개 B2B 인프라.'],
+      ['Intelligence', '시장 신호, IP 가치, 파트너 신뢰, 딜 준비도.'],
+      ['Launchpad', '새로운 한국 IP를 위한 시장 진입 지원.'],
+      ['Verified Network', '크로스보더 실행을 위한 검토된 파트너.']
     ],
-    markets: ['Korea', 'Japan', 'Southeast Asia', 'North America', 'Middle East', 'Europe'],
-    final: ['글로벌 무대.', '컬처 IP.', '하나의 브릿지.']
+    markets: baseCopy.markets,
+    final: {
+      lines: ['다음 글로벌 라이브 IP 기회를', 'Tide Bridge와 함께 설계하세요.'],
+      primary: '파트너십 요청',
+      secondary: 'Live OS 입장'
+    }
   },
   ja: {
     ...baseCopy,
@@ -106,23 +146,30 @@ const copyByLocale: Record<HomeLocale, CinematicCopy> = {
       liveOs: 'Live OSへ',
       partnership: 'Partnershipを依頼'
     },
+    nav: baseCopy.nav,
     mood: [
-      ['Live IP', 'グローバル展開するライブ形式。'],
-      ['Broadcast', 'シグナル、観客、市場地域。'],
-      ['Culture', '国際空間に届く韓国コンテンツ。'],
-      ['Network', '市場接点を持つパートナー。']
+      ['Live Stage', '光、スケール、シグナル。'],
+      ['Broadcast', '拡張のためのフレーム。'],
+      ['Backstage', '動きが始まる場所。'],
+      ['Global City', '夜のグローバル市場。'],
+      ['Audience', '観客の熱量と地域の鼓動。'],
+      ['Venue', 'カルチャーのための空間。']
     ],
     bridge: [
       ['韓国コンテンツ', 'Tide Bridge', 'グローバル市場'],
       ['グローバルライブIP', 'Tide Bridge', '韓国']
     ],
     layers: [
-      ['Live OS', '非公開オペレーションレイヤー'],
-      ['Intelligence', '市場シグナルレイヤー'],
-      ['Launchpad', '市場参入レイヤー'],
-      ['Verified Network', 'パートナー信頼レイヤー']
+      ['Live OS', 'ライブ・カルチャーIP機会のための非公開B2Bインフラ。'],
+      ['Intelligence', '市場シグナル、IP価値、パートナー信頼、ディール準備度。'],
+      ['Launchpad', '新しい韓国IPの市場参入支援。'],
+      ['Verified Network', 'クロスボーダー実行のためのレビュー済みパートナー。']
     ],
-    final: ['グローバルステージ。', 'カルチャーIP。', 'ひとつのブリッジ。']
+    final: {
+      lines: ['次のライブ・カルチャーIPの橋を', 'Tide Bridgeと共に。'],
+      primary: 'Partnershipを依頼',
+      secondary: 'Live OSへ'
+    }
   },
   zh: {
     ...baseCopy,
@@ -132,29 +179,40 @@ const copyByLocale: Record<HomeLocale, CinematicCopy> = {
       liveOs: '进入 Live OS',
       partnership: '申请合作'
     },
+    nav: baseCopy.nav,
     mood: [
-      ['Live IP', '面向全球移动的现场形式。'],
-      ['Broadcast', '信号、观众、市场区域。'],
-      ['Culture', '进入国际场景的韩国内容。'],
-      ['Network', '具备市场触点的伙伴。']
+      ['Live Stage', '灯光、规模、信号。'],
+      ['Broadcast', '面向传播的画面。'],
+      ['Backstage', '行动开始的地方。'],
+      ['Global City', '夜色中的全球市场。'],
+      ['Audience', '观众能量与本地脉搏。'],
+      ['Venue', '为文化准备的空间。']
     ],
     bridge: [
       ['韩国内容', 'Tide Bridge', '全球市场'],
       ['全球现场娱乐 IP', 'Tide Bridge', '韩国']
     ],
     layers: [
-      ['Live OS', '非公开运营层'],
-      ['Intelligence', '市场信号层'],
-      ['Launchpad', '市场进入层'],
-      ['Verified Network', '伙伴信任层']
+      ['Live OS', '面向现场与文化 IP 机会的非公开 B2B 基础设施。'],
+      ['Intelligence', '市场信号、IP 价值、伙伴信任与交易准备度。'],
+      ['Launchpad', '面向新兴韩国 IP 的市场进入支持。'],
+      ['Verified Network', '面向跨境执行的已审核伙伴。']
     ],
-    final: ['全球舞台。', '文化 IP。', '一座桥梁。']
+    final: {
+      lines: ['与 Tide Bridge 一起', '构建下一座现场娱乐 IP 桥梁。'],
+      primary: '申请合作',
+      secondary: '进入 Live OS'
+    }
   }
 };
 
 function localizedPath(locale: HomeLocale, path: string) {
   if (locale === 'root') return path;
   return `/${locale}${path}`;
+}
+
+function localizedNav(locale: HomeLocale, path: string) {
+  return localizedPath(locale, path);
 }
 
 function VisualCard({ item, image, index }: { item: string[]; image: string; index: number }) {
@@ -181,6 +239,20 @@ export function CinematicHomePage({ locale = 'root' }: { locale?: HomeLocale }) 
 
   return (
     <div className={`bg-ink text-ivory ${isCjk ? 'cjk-keep' : ''}`}>
+      <header className="absolute left-0 right-0 top-0 z-[60] border-b border-white/10 bg-ink/20 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-5">
+          <Link href={localizedPath(copy.locale, '') || '/'} className="text-xs font-semibold uppercase tracking-[0.4em] text-white">
+            Tide Bridge
+          </Link>
+          <nav className="hidden items-center gap-5 md:flex">
+            {copy.nav.map(([label, href]) => (
+              <Link key={label} href={localizedNav(copy.locale, href)} className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55 transition hover:text-champagne">
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </header>
       <section className="relative flex min-h-screen items-end overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(215,181,109,0.22),transparent_30%),linear-gradient(135deg,rgba(182,106,69,0.18),transparent_38%),linear-gradient(180deg,#15110e,#050505)]" />
         <video className="absolute inset-0 h-full w-full object-cover opacity-70" autoPlay muted loop playsInline poster={media.heroPoster} aria-hidden="true">
@@ -204,6 +276,10 @@ export function CinematicHomePage({ locale = 'root' }: { locale?: HomeLocale }) 
             <Link href={partnershipHref} className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-champagne hover:text-champagne">
               {copy.cta.partnership}
             </Link>
+          </div>
+          <div className="mt-14 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">
+            <span className="h-9 w-px bg-gradient-to-b from-champagne to-transparent" />
+            <span>Scroll</span>
           </div>
         </div>
       </section>
@@ -243,7 +319,7 @@ export function CinematicHomePage({ locale = 'root' }: { locale?: HomeLocale }) 
             <article key={title} className="min-h-64 rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(247,240,230,0.07),rgba(247,240,230,0.025))] p-6">
               <p className="text-sm font-semibold text-champagne">0{index + 1}</p>
               <h2 className="mt-12 text-3xl font-semibold tracking-[-0.035em] text-white">{title}</h2>
-              <p className="mt-5 text-sm font-medium uppercase tracking-[0.16em] text-white/45">{body}</p>
+              <p className="mt-5 text-sm leading-6 text-white/55">{body}</p>
             </article>
           ))}
         </div>
@@ -251,13 +327,14 @@ export function CinematicHomePage({ locale = 'root' }: { locale?: HomeLocale }) 
 
       <section className="overflow-hidden border-y border-white/10 bg-smoke/35 py-10">
         <div className="flex min-w-max gap-4 px-5">
-          {copy.markets.map((market, index) => (
+          {copy.markets.map(([market, tag], index) => (
             <div key={market} className="relative h-72 w-[18rem] shrink-0 overflow-hidden rounded-[1.5rem] border border-white/10 bg-smoke md:w-[24rem]">
               <div
                 className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,11,11,0.12),rgba(11,11,11,0.9)),var(--image)] bg-cover bg-center"
                 style={{ '--image': `url(${media.markets[index]})` } as CSSProperties}
               />
-              <div className="relative flex h-full items-end p-6">
+              <div className="relative flex h-full flex-col justify-end p-6">
+                <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-champagne/80">{tag}</p>
                 <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white">{market}</h2>
               </div>
             </div>
@@ -270,18 +347,18 @@ export function CinematicHomePage({ locale = 'root' }: { locale?: HomeLocale }) 
         <div className="relative mx-auto flex min-h-[72vh] max-w-7xl flex-col justify-center px-5 py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.42em] text-champagne">TIDE BRIDGE</p>
           <h2 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-white md:text-8xl">
-            {copy.final.map((line) => (
+            {copy.final.lines.map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
             ))}
           </h2>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href={liveOsHref} className="rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
-              {copy.cta.liveOs}
+            <Link href={partnershipHref} className="rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
+              {copy.final.primary}
             </Link>
-            <Link href={partnershipHref} className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-champagne hover:text-champagne">
-              {copy.cta.partnership}
+            <Link href={liveOsHref} className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-champagne hover:text-champagne">
+              {copy.final.secondary}
             </Link>
           </div>
         </div>
