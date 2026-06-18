@@ -40,3 +40,9 @@ body {
 .btn-secondary {
   @apply rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-ivory transition hover:border-champagne/70 hover:text-champagne;
 }
+
+.cjk-keep {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
