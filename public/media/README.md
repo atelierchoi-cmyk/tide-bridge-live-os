@@ -9,6 +9,8 @@ Optional editorial image assets:
 - tide-bridge-mood-broadcast.jpg
 - tide-bridge-mood-city.jpg
 - tide-bridge-mood-backstage.jpg
+- tide-bridge-mood-audience.jpg
+- tide-bridge-mood-venue.jpg
 - market-korea.jpg
 - market-japan.jpg
 - market-southeast-asia.jpg
