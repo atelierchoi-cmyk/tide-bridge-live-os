@@ -20,12 +20,15 @@ type PortfolioItem = {
 
 type HomeCopy = {
   locale: HomeLocale;
-  eyebrow: string;
-  headline: string;
-  koreanLines: string[];
-  viewBusiness: string;
+  heroTitle: string[];
+  heroSubcopy: string;
+  secondaryTitle: string[];
+  secondarySubcopy: string;
+  businessCta: string;
+  portfolioCta: string;
+  contactCtaShort: string;
   enterLiveOs: string;
-  contact: string;
+  aboutEnglish: string;
   aboutKorean: string;
   business: BusinessItem[];
   portfolio: PortfolioItem[];
@@ -43,78 +46,82 @@ const navItems = ['About', 'Business', 'Portfolio', 'Team', 'Contact'];
 const mediaPaths = {
   heroVideo: '/media/wave-hero.mp4',
   heroPoster: '/media/wave-hero-poster.jpg',
-  heroFallback: '/images/home/hero-fallback.jpg'
+  heroFallback: '/images/home/hero-wave.jpg'
 };
 
 const imagePaths = {
-  about: '/images/home/about-bridge.jpg',
-  team: '/images/home/team-global.jpg',
-  contact: '/images/home/contact-seoul.jpg'
+  about: '/images/home/about-culture.jpg',
+  business: '/images/home/business-global.jpg',
+  team: '/images/home/team.jpg',
+  contact: '/images/home/contact.jpg'
 };
+
+const businessItems: BusinessItem[] = [
+  { title: 'Korea to Global', body: '한국 IP의 글로벌 확장.' },
+  { title: 'Global to Korea', body: '글로벌 IP의 한국 진입.' },
+  { title: 'IP & Rights', body: '공연·전시·콘텐츠 판권 구조화.' },
+  { title: 'Market Entry', body: '우선 시장 진입과 파트너십 설계.' }
+];
 
 const portfolioItems: PortfolioItem[] = [
   {
     title: 'K-Content IP',
-    body: 'Korean music, artists, actors, and cultural formats for global expansion.',
-    tags: ['Korea to Global', 'IP Strategy', 'Market Entry'],
+    body: 'Music, artists, actors, formats.',
+    tags: ['Content', 'IP', 'Global'],
     image: '/images/home/portfolio-kcontent.jpg'
   },
   {
     title: 'Live Events',
-    body: 'Concerts, fan events, showcases, and touring opportunities across markets.',
-    tags: ['Live', 'Touring', 'Promoters'],
-    image: '/images/home/portfolio-live-events.jpg'
+    body: 'Concerts, fan events, showcases.',
+    tags: ['Live', 'Tour', 'Fans'],
+    image: '/images/home/portfolio-live.jpg'
   },
   {
     title: 'Exhibitions',
-    body: 'Cultural exhibitions, immersive formats, and destination-based experiences.',
-    tags: ['Culture', 'Exhibition', 'Experience'],
-    image: '/images/home/portfolio-exhibitions.jpg'
+    body: 'Cultural and immersive experiences.',
+    tags: ['Culture', 'Space', 'Experience'],
+    image: '/images/home/portfolio-exhibition.jpg'
   },
   {
     title: 'Brand Culture',
-    body: 'Brand-led cultural collaborations connecting IP, audience, and market context.',
-    tags: ['Brand', 'Culture', 'Partnership'],
-    image: '/images/home/portfolio-brand-culture.jpg'
+    body: 'Culture-led brand partnerships.',
+    tags: ['Brand', 'Audience', 'Culture'],
+    image: '/images/home/portfolio-brand.jpg'
   },
   {
     title: 'Esports',
-    body: 'Entertainment-driven esports IP, events, and fan-based global formats.',
+    body: 'Fandom-driven event IP.',
     tags: ['Esports', 'Fandom', 'Event'],
     image: '/images/home/portfolio-esports.jpg'
   },
   {
     title: 'Market Entry',
-    body: 'Structured entry support for emerging Korean IP in priority territories.',
-    tags: ['Launchpad', 'North America', 'Growth'],
+    body: 'Launch support for new IP.',
+    tags: ['Launchpad', 'Market', 'Growth'],
     image: '/images/home/portfolio-market-entry.jpg'
   }
 ];
 
-const businessItems: BusinessItem[] = [
-  { title: 'Korea to Global', body: '한국 콘텐츠 IP의 해외 시장 확장.' },
-  { title: 'Global to Korea', body: '글로벌 라이브·컬처 IP의 한국 진입.' },
-  { title: 'IP & Rights', body: '공연·전시·콘텐츠 IP의 구조화와 판권 기획.' },
-  { title: 'Market Entry', body: '우선 시장 진입과 파트너십 설계.' }
-];
-
 const baseCopy: HomeCopy = {
   locale: 'root',
-  eyebrow: 'TIDE BRIDGE',
-  headline: 'Connecting the Next Wave of Culture',
-  koreanLines: ['한국 콘텐츠와', '글로벌 라이브 IP를', '하나의 브릿지로 연결합니다.'],
-  viewBusiness: 'View Business',
+  heroTitle: ['Culture. IP. Live.', 'Across Borders.'],
+  heroSubcopy: 'A cross-border company for live and cultural IP.',
+  secondaryTitle: ['문화와 IP를', '국경 너머로.'],
+  secondarySubcopy: '라이브와 컬처 IP를 연결하는 크로스보더 컴퍼니.',
+  businessCta: 'Business',
+  portfolioCta: 'Portfolio',
+  contactCtaShort: 'Contact',
   enterLiveOs: 'Enter Live OS',
-  contact: 'Contact',
-  aboutKorean: 'Tide Bridge는 한국 콘텐츠와 글로벌 라이브·컬처 IP를 연결하는\n크로스보더 엔터테인먼트 컴퍼니입니다.',
+  aboutEnglish: 'We connect Korean content, global live IP, and verified partners.',
+  aboutKorean: '한국 콘텐츠와 글로벌 라이브 IP,\n검증된 파트너를 연결합니다.',
   business: businessItems,
   portfolio: portfolioItems,
-  conceptLabels: ['Global Markets', 'Artist & IP Network', 'Cross-Border Partners', 'Cultural Opportunities'],
-  teamEnglish: 'A cross-border team built around live entertainment, IP strategy, partnerships, and market execution.',
-  teamKorean: '라이브 엔터테인먼트, IP 전략, 파트너십, 시장 실행을 연결하는\n크로스보더 팀입니다.',
-  roles: ['IP Strategy', 'Live Entertainment', 'Partnerships', 'Market Entry', 'Intelligence'],
-  contactEnglish: 'For partnerships, market entry, and global live IP opportunities.',
-  contactKorean: '파트너십, 시장 진입, 글로벌 라이브 IP 기회를 함께 논의합니다.',
+  conceptLabels: ['Global Markets', 'IP Network', 'Cross-Border Partners', 'Cultural Opportunities'],
+  teamEnglish: 'Cross-border IP, live, and market execution.',
+  teamKorean: 'IP, 라이브, 시장 실행을 연결하는 팀.',
+  roles: ['IP Strategy', 'Live', 'Partnerships', 'Market Entry', 'Intelligence'],
+  contactEnglish: 'Partnerships. Market Entry. Global Live IP.',
+  contactKorean: '파트너십, 시장 진입, 글로벌 라이브 IP.',
   contactCta: 'Contact Tide Bridge'
 };
 
@@ -124,31 +131,37 @@ const copyByLocale: Record<HomeLocale, HomeCopy> = {
   ko: {
     ...baseCopy,
     locale: 'ko',
-    viewBusiness: '비즈니스 보기',
+    heroTitle: ['문화와 IP를', '국경 너머로.'],
+    heroSubcopy: '라이브와 컬처 IP를 연결하는 크로스보더 컴퍼니.',
+    secondaryTitle: ['Culture. IP. Live.', 'Across Borders.'],
+    secondarySubcopy: 'A cross-border company for live and cultural IP.',
+    businessCta: '비즈니스',
+    portfolioCta: '포트폴리오',
+    contactCtaShort: '문의하기',
     enterLiveOs: 'Live OS 입장',
-    contact: '문의하기',
     contactCta: 'Tide Bridge 문의'
   },
   ja: {
     ...baseCopy,
     locale: 'ja',
-    koreanLines: ['韓国コンテンツと', 'グローバルライブIPを', 'ひとつのブリッジでつなぎます。'],
-    aboutKorean: 'Tide Bridgeは、韓国コンテンツとグローバルライブ・カルチャーIPをつなぐ\nクロスボーダー・エンターテインメントカンパニーです。',
-    teamKorean: 'ライブエンターテインメント、IP戦略、パートナーシップ、市場実行をつなぐ\nクロスボーダーチームです。',
-    contactKorean: 'パートナーシップ、市場参入、グローバルライブIP機会についてご相談ください。',
-    viewBusiness: 'Businessを見る',
-    contact: 'Contact'
+    heroTitle: ['文化とIPを', '国境を越えて。'],
+    heroSubcopy: 'ライブとカルチャーIPをつなぐクロスボーダーカンパニー。',
+    secondaryTitle: ['Culture. IP. Live.', 'Across Borders.'],
+    secondarySubcopy: 'A cross-border company for live and cultural IP.',
+    aboutKorean: '韓国コンテンツ、グローバルライブIP、\n信頼できるパートナーをつなぎます。',
+    teamKorean: 'IP、ライブ、市場実行をつなぐチーム。',
+    contactKorean: 'パートナーシップ、市場参入、グローバルライブIP。'
   },
   zh: {
     ...baseCopy,
     locale: 'zh',
-    koreanLines: ['连接韩国内容与', '全球现场娱乐 IP，', '构建跨境桥梁。'],
-    aboutKorean: 'Tide Bridge 是连接韩国内容与全球现场娱乐及文化 IP 的\n跨境娱乐公司。',
-    teamKorean: '连接现场娱乐、IP 策略、伙伴关系与市场执行的\n跨境团队。',
-    contactKorean: '共同讨论伙伴关系、市场进入与全球现场娱乐 IP 机会。',
-    viewBusiness: '查看业务',
-    contact: '联系',
-    contactCta: '联系 Tide Bridge'
+    heroTitle: ['文化与IP', '跨越边界。'],
+    heroSubcopy: '连接现场娱乐与文化 IP 的跨境公司。',
+    secondaryTitle: ['Culture. IP. Live.', 'Across Borders.'],
+    secondarySubcopy: 'A cross-border company for live and cultural IP.',
+    aboutKorean: '连接韩国内容、全球现场娱乐IP，\n以及可信伙伴。',
+    teamKorean: '连接 IP、现场娱乐与市场执行的团队。',
+    contactKorean: '伙伴关系、市场进入、全球现场娱乐IP。'
   }
 };
 
@@ -161,8 +174,10 @@ function localizedPath(locale: HomeLocale, nextPath: string) {
   return `/${locale}${nextPath}`;
 }
 
-function textLines(value: string) {
-  return value.split('\n').map((line) => (
+function textLines(lines: string[] | string) {
+  const value = Array.isArray(lines) ? lines : lines.split('\n');
+
+  return value.map((line) => (
     <span key={line} className="block">
       {line}
     </span>
@@ -173,10 +188,6 @@ function imageStyle(image: string, fallback: string) {
   const imageValue = publicFileExists(image) ? `url(${image})` : 'none';
 
   return { '--image': imageValue, '--fallback': fallback } as CSSProperties;
-}
-
-function hasPublicImage(image: string) {
-  return publicFileExists(image);
 }
 
 function SectionLabel({ id, title }: { id: string; title: string }) {
@@ -211,23 +222,23 @@ function ImageSurface({
   className?: string;
   children?: ReactNode;
 }) {
-  const hasImage = hasPublicImage(image);
+  const hasImage = publicFileExists(image);
 
   return (
     <div
-      className={`relative overflow-hidden bg-[image:linear-gradient(135deg,rgba(215,181,109,0.24),rgba(247,240,230,0.07)_34%,rgba(12,12,11,0.96)),var(--image),var(--fallback)] bg-cover bg-center ${className}`}
+      className={`relative overflow-hidden bg-[image:linear-gradient(135deg,rgba(4,13,22,0.12),rgba(4,13,22,0.46)),var(--image),var(--fallback)] bg-cover bg-center ${className}`}
       style={imageStyle(image, fallback)}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.18),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.7))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,9,14,0.08),rgba(3,9,14,0.72)),radial-gradient(circle_at_18%_18%,rgba(215,181,109,0.16),transparent_18rem)]" />
       {!hasImage && label ? (
-        <div className="absolute inset-0 opacity-70">
+        <div className="absolute inset-0 opacity-75">
           <div className="absolute left-6 top-6 h-px w-24 bg-champagne/45" />
           <div className="absolute right-6 top-6 h-24 w-px bg-champagne/30" />
           <div className="absolute bottom-8 left-6 flex items-end gap-4">
             <BridgeMark />
             <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-champagne/70">{label}</span>
           </div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_72%,rgba(215,181,109,0.15),transparent_18rem),linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.035)_46%,transparent_47%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.04)_46%,transparent_47%)]" />
         </div>
       ) : null}
       {children}
@@ -255,29 +266,15 @@ function HeroMedia() {
     );
   }
 
-  if (hasPoster) {
-    return (
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${mediaPaths.heroPoster})` }}
-        aria-hidden="true"
-      />
-    );
-  }
+  if (hasPoster || publicFileExists(mediaPaths.heroFallback)) {
+    const image = hasPoster ? mediaPaths.heroPoster : mediaPaths.heroFallback;
 
-  if (publicFileExists(mediaPaths.heroFallback)) {
-    return (
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${mediaPaths.heroFallback})` }}
-        aria-hidden="true"
-      />
-    );
+    return <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }} aria-hidden="true" />;
   }
 
   return (
     <div
-      className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(215,181,109,0.2),transparent_28%),radial-gradient(circle_at_28%_76%,rgba(88,114,129,0.28),transparent_34%),linear-gradient(135deg,#07121b,#0b0b0b_48%,#17120b)]"
+      className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(215,181,109,0.2),transparent_26rem),radial-gradient(circle_at_20%_76%,rgba(41,66,84,0.34),transparent_24rem),linear-gradient(135deg,#06111b,#0b0b0b_52%,#171209)]"
       aria-hidden="true"
     />
   );
@@ -285,7 +282,7 @@ function HeroMedia() {
 
 function HomeHeader({ copy }: { copy: HomeCopy }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111a]/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111a]/72 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
         <Link href={localizedPath(copy.locale, '')} className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.32em] text-ivory">
           <BridgeMark />
@@ -313,40 +310,37 @@ function BrandHero({ copy }: { copy: HomeCopy }) {
   return (
     <section className="relative isolate flex min-h-screen items-end overflow-hidden px-5 pb-16 pt-28">
       <HeroMedia />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,9,14,0.92),rgba(3,9,14,0.58)_52%,rgba(3,9,14,0.84)),linear-gradient(180deg,rgba(3,9,14,0.26),rgba(12,12,11,0.94))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,9,14,0.9),rgba(3,9,14,0.52)_52%,rgba(3,9,14,0.84)),linear-gradient(180deg,rgba(3,9,14,0.15),rgba(12,12,11,0.94))]" />
       <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0c0c0b] to-transparent" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.95fr_0.55fr] lg:items-end">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1fr_0.45fr] lg:items-end">
         <div className="max-w-4xl">
           <p className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.44em] text-champagne">
             <BridgeMark />
-            {copy.eyebrow}
+            TIDE BRIDGE
           </p>
-          <h1 className="mt-8 max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl lg:text-8xl">
-            {copy.headline}
+          <h1 className="mt-8 max-w-4xl break-keep font-serif text-6xl font-semibold leading-[0.9] tracking-[-0.045em] text-white md:text-8xl">
+            {textLines(copy.heroTitle)}
           </h1>
-          <p className="mt-8 max-w-2xl whitespace-pre-line break-keep text-2xl font-semibold leading-tight tracking-[-0.02em] text-ivory/82 md:text-4xl">{copy.koreanLines.join('\n')}</p>
+          <p className="mt-7 max-w-xl break-keep text-base font-medium leading-7 text-ivory/70 md:text-lg">{copy.heroSubcopy}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a href="#business" className="rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
-              {copy.viewBusiness}
+              {copy.businessCta}
             </a>
-            <Link href={localizedPath(copy.locale, '/live-os')} className="rounded-full border border-champagne/45 px-6 py-3 text-sm font-semibold text-champagne transition hover:bg-champagne hover:text-ink">
-              {copy.enterLiveOs}
-            </Link>
+            <a href="#portfolio" className="rounded-full border border-champagne/45 px-6 py-3 text-sm font-semibold text-champagne transition hover:bg-champagne hover:text-ink">
+              {copy.portfolioCta}
+            </a>
             <a href="#contact" className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-ivory transition hover:border-champagne hover:text-champagne">
-              {copy.contact}
+              {copy.contactCtaShort}
             </a>
           </div>
         </div>
 
         <div className="hidden border-l border-white/15 pl-7 lg:block">
-          <div className="grid gap-4">
-            {copy.conceptLabels.map((label) => (
-              <p key={label} className="border-b border-white/10 pb-4 text-xs font-semibold uppercase tracking-[0.22em] text-ivory/58">
-                {label}
-              </p>
-            ))}
-          </div>
+          <p className="break-keep font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-ivory/82">
+            {textLines(copy.secondaryTitle)}
+          </p>
+          <p className="mt-5 break-keep text-sm leading-6 text-ivory/54">{copy.secondarySubcopy}</p>
         </div>
       </div>
     </section>
@@ -354,29 +348,15 @@ function BrandHero({ copy }: { copy: HomeCopy }) {
 }
 
 function AboutSection({ copy }: { copy: HomeCopy }) {
-  const hasAboutImage = hasPublicImage(imagePaths.about);
-
   return (
     <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="01" title="About" />
       <div className="grid gap-10 lg:grid-cols-[0.82fr_1fr] lg:items-center">
-        <ImageSurface
-          image={imagePaths.about}
-          fallback="linear-gradient(135deg,#07121b,#2d2618_54%,#0c0c0b)"
-          label="Bridge"
-          className="min-h-[22rem] border border-white/10 md:min-h-[30rem]"
-        >
-          {!hasAboutImage ? (
-            <div className="relative z-10 flex h-full min-h-[22rem] items-center justify-center md:min-h-[30rem]">
-              <div className="scale-150 text-champagne/70">
-                <BridgeMark />
-              </div>
-            </div>
-          ) : null}
-        </ImageSurface>
+        <ImageSurface image={imagePaths.about} fallback="linear-gradient(135deg,#07121b,#2d2618_54%,#0c0c0b)" label="Culture" className="min-h-[22rem] border border-white/10 md:min-h-[30rem]" />
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-champagne/70">Cross-Border Company</p>
-          <p className="mt-8 max-w-4xl whitespace-pre-line break-keep font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">
+          <p className="mt-8 max-w-4xl font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">{copy.aboutEnglish}</p>
+          <p className="mt-7 max-w-3xl whitespace-pre-line break-keep text-xl font-medium leading-8 text-ivory/66 md:text-2xl">
             {textLines(copy.aboutKorean)}
           </p>
         </div>
@@ -387,19 +367,23 @@ function AboutSection({ copy }: { copy: HomeCopy }) {
 
 function BusinessCards({ copy }: { copy: HomeCopy }) {
   return (
-    <section id="business" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
-      <SectionLabel id="02" title="Business" />
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {copy.business.map((item, index) => (
-          <article key={item.title} className="group min-h-72 border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-champagne/45 hover:bg-white/[0.055]">
-            <div className="flex items-center justify-between">
-              <p className="text-xs font-semibold text-champagne">0{index + 1}</p>
-              <span className="h-2 w-2 rounded-full bg-champagne/75 opacity-50 transition group-hover:opacity-100" />
-            </div>
-            <h3 className="mt-16 font-serif text-3xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
-            <p className="mt-7 break-keep text-sm leading-6 text-ivory/64">{item.body}</p>
-          </article>
-        ))}
+    <section id="business" className="relative isolate overflow-hidden border-y border-white/10 px-5 py-20 md:py-28">
+      <ImageSurface image={imagePaths.business} fallback="linear-gradient(135deg,#07121b,#272313_52%,#0c0c0b)" className="absolute inset-0 -z-10 opacity-55" />
+      <div className="absolute inset-0 -z-10 bg-[#0c0c0b]/70" />
+      <div className="mx-auto max-w-7xl">
+        <SectionLabel id="02" title="Business" />
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {copy.business.map((item, index) => (
+            <article key={item.title} className="group min-h-64 border border-white/10 bg-[#07111a]/62 p-6 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-champagne/45 hover:bg-[#10100e]/80">
+              <div className="flex items-center justify-between">
+                <p className="text-xs font-semibold text-champagne">0{index + 1}</p>
+                <span className="h-px w-10 bg-champagne/55 transition group-hover:w-14" />
+              </div>
+              <h3 className="mt-16 font-serif text-3xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
+              <p className="mt-6 break-keep text-sm leading-6 text-ivory/68">{item.body}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -420,22 +404,20 @@ function PortfolioGrid({ copy }: { copy: HomeCopy }) {
       <SectionLabel id="03" title="Portfolio" />
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {copy.portfolio.map((item, index) => (
-          <article key={item.title} className="group overflow-hidden border border-white/10 bg-[#141311] transition duration-300 hover:-translate-y-1 hover:border-champagne/45">
+          <article key={item.title} className="group overflow-hidden border border-white/10 bg-[#10100e] transition duration-300 hover:-translate-y-1 hover:border-champagne/45">
             <ImageSurface image={item.image} fallback={fallbacks[index]} label={item.title} className="h-80 transition duration-700 group-hover:scale-[1.025]">
               <div className="absolute inset-x-0 bottom-0 z-10 p-6">
                 <div className="mb-4 h-px w-16 bg-champagne/70 transition group-hover:w-24" />
                 <h3 className="font-serif text-3xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-ivory/70">{item.body}</p>
               </div>
             </ImageSurface>
-            <div className="p-6">
-              <p className="text-sm leading-6 text-ivory/62">{item.body}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <span key={tag} className="border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-ivory/55">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2 p-5">
+              {item.tags.map((tag) => (
+                <span key={tag} className="border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-ivory/55">
+                  {tag}
+                </span>
+              ))}
             </div>
           </article>
         ))}
@@ -467,7 +449,7 @@ function TeamPreview({ copy }: { copy: HomeCopy }) {
         <div className="flex flex-col justify-between gap-12 border border-white/10 bg-white/[0.035] p-6 md:p-8">
           <div>
             <p className="max-w-4xl font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">{copy.teamEnglish}</p>
-            <p className="mt-7 whitespace-pre-line break-keep text-xl font-medium leading-9 text-ivory/66 md:text-2xl">{textLines(copy.teamKorean)}</p>
+            <p className="mt-7 break-keep text-xl font-medium leading-8 text-ivory/66 md:text-2xl">{copy.teamKorean}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             {copy.roles.map((item) => (
@@ -486,7 +468,7 @@ function ContactSection({ copy }: { copy: HomeCopy }) {
   return (
     <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <div className="grid overflow-hidden border border-white/10 bg-[linear-gradient(135deg,rgba(215,181,109,0.16),rgba(247,240,230,0.045)_42%,rgba(247,240,230,0.025))] lg:grid-cols-[0.78fr_1.22fr]">
-        <ImageSurface image={imagePaths.contact} fallback="linear-gradient(135deg,#07121b,#3b321f_54%,#0c0c0b)" label="Seoul" className="min-h-[22rem]" />
+        <ImageSurface image={imagePaths.contact} fallback="linear-gradient(135deg,#07121b,#3b321f_54%,#0c0c0b)" label="Contact" className="min-h-[22rem]" />
 
         <div className="p-7 md:p-12">
           <div>
@@ -514,11 +496,7 @@ function ContactSection({ copy }: { copy: HomeCopy }) {
             </label>
             <label className="grid gap-2">
               <span className="label">Message</span>
-              <textarea
-                className="input min-h-36 resize-y"
-                name="message"
-                placeholder="Tell us what you would like to build with Tide Bridge."
-              />
+              <textarea className="input min-h-36 resize-y" name="message" placeholder="Tell us what you would like to build with Tide Bridge." />
             </label>
             <button className="mt-2 rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne" type="submit">
               {copy.contactCta}
