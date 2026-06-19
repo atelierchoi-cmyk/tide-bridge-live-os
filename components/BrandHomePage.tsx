@@ -20,27 +20,34 @@ type PortfolioItem = {
 
 type HomeCopy = {
   locale: HomeLocale;
-  title: string;
-  lines: string[];
+  eyebrow: string;
+  headline: string;
+  englishLines: string[];
+  koreanLines: string[];
   viewBusiness: string;
+  enterLiveOs: string;
   contact: string;
-  about: string;
+  aboutEnglish: string;
+  aboutKorean: string;
   business: BusinessItem[];
   portfolio: PortfolioItem[];
-  team: string;
+  conceptLabels: string[];
+  teamEnglish: string;
+  teamKorean: string;
   roles: string[];
-  contactText: string;
+  contactEnglish: string;
+  contactKorean: string;
   contactCta: string;
 };
 
 const navItems = ['About', 'Business', 'Portfolio', 'Team', 'Contact'];
 
-const assetPaths = {
-  hero: '/images/home/hero-stage.jpg',
-  team: '/images/home/team-placeholder.jpg'
+const mediaPaths = {
+  heroVideo: '/media/wave-hero.mp4',
+  heroPoster: '/media/wave-hero-poster.jpg'
 };
 
-const basePortfolio: PortfolioItem[] = [
+const portfolioItems: PortfolioItem[] = [
   {
     title: 'K-Content IP',
     body: 'Korean music, artists, actors, and cultural formats for global expansion.',
@@ -79,23 +86,32 @@ const basePortfolio: PortfolioItem[] = [
   }
 ];
 
+const businessItems: BusinessItem[] = [
+  { title: 'Korea to Global', body: '한국 콘텐츠 IP의 해외 시장 확장.' },
+  { title: 'Global to Korea', body: '글로벌 라이브·컬처 IP의 한국 진입.' },
+  { title: 'IP & Rights', body: '공연·전시·콘텐츠 IP의 구조화와 판권 기획.' },
+  { title: 'Market Entry', body: '우선 시장 진입과 파트너십 설계.' }
+];
+
 const baseCopy: HomeCopy = {
   locale: 'root',
-  title: 'Global Live & Cultural IP Company',
-  lines: ['Korean Content.', 'Global Live IP.', 'One Cross-Border Bridge.'],
+  eyebrow: 'TIDE BRIDGE',
+  headline: 'Connecting the Next Wave of Culture',
+  englishLines: ['Korean Content.', 'Global Live IP.', 'One Cross-Border Bridge.'],
+  koreanLines: ['한국 콘텐츠와', '글로벌 라이브 IP를', '하나의 브릿지로 연결합니다.'],
   viewBusiness: 'View Business',
+  enterLiveOs: 'Enter Live OS',
   contact: 'Contact',
-  about: 'Tide Bridge connects Korean content, global live opportunities, and verified partners across culture, entertainment, and market entry.',
-  business: [
-    { title: 'Korea to Global', body: 'Expanding Korean content IP into global live and cultural markets.' },
-    { title: 'Global to Korea', body: 'Bringing global live, exhibition, and cultural IP into Korea.' },
-    { title: 'Intelligence', body: 'Market demand, IP fit, partner credibility, and deal readiness.' },
-    { title: 'Network', body: 'A reviewed partner network for cross-border execution.' }
-  ],
-  portfolio: basePortfolio,
-  team: 'A cross-border team built around live entertainment, IP strategy, partnerships, and market execution.',
+  aboutEnglish: 'Tide Bridge connects Korean content, global live opportunities, and verified partners across culture, entertainment, and market entry.',
+  aboutKorean: 'Tide Bridge는 한국 콘텐츠와 글로벌 라이브·컬처 IP를 연결하는\n크로스보더 엔터테인먼트 컴퍼니입니다.',
+  business: businessItems,
+  portfolio: portfolioItems,
+  conceptLabels: ['Global Markets', 'Artist & IP Network', 'Cross-Border Partners', 'Cultural Opportunities'],
+  teamEnglish: 'A cross-border team built around live entertainment, IP strategy, partnerships, and market execution.',
+  teamKorean: '라이브 엔터테인먼트, IP 전략, 파트너십, 시장 실행을 연결하는\n크로스보더 팀입니다.',
   roles: ['IP Strategy', 'Live Entertainment', 'Partnerships', 'Market Entry', 'Intelligence'],
-  contactText: 'For partnerships, market entry, and global live IP opportunities.',
+  contactEnglish: 'For partnerships, market entry, and global live IP opportunities.',
+  contactKorean: '파트너십, 시장 진입, 글로벌 라이브 IP 기회를 함께 논의합니다.',
   contactCta: 'Contact Tide Bridge'
 };
 
@@ -105,59 +121,41 @@ const copyByLocale: Record<HomeLocale, HomeCopy> = {
   ko: {
     ...baseCopy,
     locale: 'ko',
-    lines: ['한국 콘텐츠와', '글로벌 라이브 IP를', '하나의 브릿지로 연결합니다.'],
     viewBusiness: '비즈니스 보기',
+    enterLiveOs: 'Live OS 입장',
     contact: '문의하기',
-    about: 'Tide Bridge는 한국 콘텐츠와 글로벌 라이브 IP를 연결하는\n크로스보더 엔터테인먼트 컴퍼니입니다.',
-    business: [
-      { title: 'Korea to Global', body: '한국 콘텐츠 IP의 해외 시장 확장.' },
-      { title: 'Global to Korea', body: '글로벌 라이브·컬처 IP의 한국 진입.' },
-      { title: 'Intelligence', body: '시장 수요와 파트너 신뢰도 분석.' },
-      { title: 'Network', body: '검증 기반 글로벌 파트너 연결.' }
-    ],
-    team: '라이브 엔터테인먼트, IP 전략, 파트너십, 시장 실행을 연결하는\n크로스보더 팀입니다.',
-    contactText: '파트너십, 시장 진입, 글로벌 라이브 IP 기회를 함께 논의합니다.',
     contactCta: 'Tide Bridge 문의'
   },
   ja: {
     ...baseCopy,
     locale: 'ja',
-    lines: ['韓国コンテンツと', 'グローバルライブIPを', 'ひとつのブリッジでつなぎます。'],
+    koreanLines: ['韓国コンテンツと', 'グローバルライブIPを', 'ひとつのブリッジでつなぎます。'],
+    aboutKorean: 'Tide Bridgeは、韓国コンテンツとグローバルライブ・カルチャーIPをつなぐ\nクロスボーダー・エンターテインメントカンパニーです。',
+    teamKorean: 'ライブエンターテインメント、IP戦略、パートナーシップ、市場実行をつなぐ\nクロスボーダーチームです。',
+    contactKorean: 'パートナーシップ、市場参入、グローバルライブIP機会についてご相談ください。',
     viewBusiness: 'Businessを見る',
-    contact: 'Contact',
-    about: 'Tide Bridgeは、韓国コンテンツとグローバルライブIPをつなぐ\nクロスボーダー・エンターテインメントカンパニーです。',
-    business: [
-      { title: 'Korea to Global', body: '韓国コンテンツIPの海外市場展開。' },
-      { title: 'Global to Korea', body: 'グローバルライブ・カルチャーIPの韓国進出。' },
-      { title: 'Intelligence', body: '市場需要とパートナー信頼度の分析。' },
-      { title: 'Network', body: '検証ベースのグローバルパートナー接続。' }
-    ],
-    team: 'ライブエンターテインメント、IP戦略、パートナーシップ、市場実行をつなぐ\nクロスボーダーチームです。',
-    contactText: 'パートナーシップ、市場参入、グローバルライブIP機会についてご相談ください。',
-    contactCta: 'Contact Tide Bridge'
+    contact: 'Contact'
   },
   zh: {
     ...baseCopy,
     locale: 'zh',
-    lines: ['连接韩国内容与', '全球现场娱乐 IP，', '构建跨境桥梁。'],
+    koreanLines: ['连接韩国内容与', '全球现场娱乐 IP，', '构建跨境桥梁。'],
+    aboutKorean: 'Tide Bridge 是连接韩国内容与全球现场娱乐及文化 IP 的\n跨境娱乐公司。',
+    teamKorean: '连接现场娱乐、IP 策略、伙伴关系与市场执行的\n跨境团队。',
+    contactKorean: '共同讨论伙伴关系、市场进入与全球现场娱乐 IP 机会。',
     viewBusiness: '查看业务',
     contact: '联系',
-    about: 'Tide Bridge 是连接韩国内容与全球现场娱乐 IP 的\n跨境娱乐公司。',
-    business: [
-      { title: 'Korea to Global', body: '韩国内容 IP 的海外市场扩展。' },
-      { title: 'Global to Korea', body: '全球现场娱乐及文化 IP 进入韩国。' },
-      { title: 'Intelligence', body: '市场需求与伙伴信任度分析。' },
-      { title: 'Network', body: '基于验证的全球伙伴连接。' }
-    ],
-    team: '连接现场娱乐、IP 策略、伙伴关系与市场执行的\n跨境团队。',
-    contactText: '共同讨论伙伴关系、市场进入与全球现场娱乐 IP 机会。',
     contactCta: '联系 Tide Bridge'
   }
 };
 
-function localizedPath(locale: HomeLocale, path: string) {
-  if (locale === 'root') return path || '/';
-  return `/${locale}${path}`;
+function publicFileExists(publicPath: string) {
+  return existsSync(path.join(process.cwd(), 'public', publicPath.replace(/^\//, '')));
+}
+
+function localizedPath(locale: HomeLocale, nextPath: string) {
+  if (locale === 'root') return nextPath || '/';
+  return `/${locale}${nextPath}`;
 }
 
 function textLines(value: string) {
@@ -168,11 +166,10 @@ function textLines(value: string) {
   ));
 }
 
-function homeImageStyle(image: string) {
-  const localImagePath = path.join(process.cwd(), 'public', image.replace(/^\//, ''));
-  const imageValue = existsSync(localImagePath) ? `url(${image})` : 'none';
+function imageStyle(image: string, fallback: string) {
+  const imageValue = publicFileExists(image) ? `url(${image})` : 'none';
 
-  return { '--image': imageValue } as CSSProperties;
+  return { '--image': imageValue, '--fallback': fallback } as CSSProperties;
 }
 
 function SectionLabel({ id, title }: { id: string; title: string }) {
@@ -184,81 +181,165 @@ function SectionLabel({ id, title }: { id: string; title: string }) {
   );
 }
 
+function BridgeMark() {
+  return (
+    <span className="relative inline-flex h-8 w-14 items-end" aria-hidden="true">
+      <span className="absolute bottom-2 left-0 h-px w-full bg-champagne/70" />
+      <span className="absolute bottom-2 left-1 h-5 w-12 rounded-t-full border border-b-0 border-champagne/70" />
+      <span className="absolute bottom-0 left-1 h-[3px] w-12 rounded-full bg-[linear-gradient(90deg,transparent,rgba(215,181,109,0.85),transparent)]" />
+    </span>
+  );
+}
+
 function ImageSurface({
   image,
+  fallback,
   className = '',
   children
 }: {
   image: string;
+  fallback: string;
   className?: string;
   children?: ReactNode;
 }) {
   return (
     <div
-      className={`relative overflow-hidden bg-[linear-gradient(135deg,rgba(215,181,109,0.28),rgba(247,240,230,0.08)_38%,rgba(12,12,11,0.96)),var(--image)] bg-cover bg-center ${className}`}
-      style={homeImageStyle(image)}
+      className={`relative overflow-hidden bg-[image:linear-gradient(135deg,rgba(215,181,109,0.24),rgba(247,240,230,0.07)_34%,rgba(12,12,11,0.96)),var(--image),var(--fallback)] bg-cover bg-center ${className}`}
+      style={imageStyle(image, fallback)}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.2),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.62))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.18),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.7))]" />
       {children}
     </div>
   );
 }
 
+function HeroMedia() {
+  const hasVideo = publicFileExists(mediaPaths.heroVideo);
+  const hasPoster = publicFileExists(mediaPaths.heroPoster);
+
+  if (hasVideo) {
+    return (
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={hasPoster ? mediaPaths.heroPoster : undefined}
+        aria-hidden="true"
+      >
+        <source src={mediaPaths.heroVideo} type="video/mp4" />
+      </video>
+    );
+  }
+
+  if (hasPoster) {
+    return (
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${mediaPaths.heroPoster})` }}
+        aria-hidden="true"
+      />
+    );
+  }
+
+  return (
+    <div
+      className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(215,181,109,0.2),transparent_28%),radial-gradient(circle_at_28%_76%,rgba(88,114,129,0.28),transparent_34%),linear-gradient(135deg,#07121b,#0b0b0b_48%,#17120b)]"
+      aria-hidden="true"
+    />
+  );
+}
+
+function HomeHeader({ copy }: { copy: HomeCopy }) {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111a]/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
+        <Link href={localizedPath(copy.locale, '')} className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.32em] text-ivory">
+          <BridgeMark />
+          <span>Tide Bridge</span>
+        </Link>
+        <nav className="hidden items-center gap-6 md:flex">
+          {navItems.map((item) => (
+            <a key={item} href={`#${item.toLowerCase()}`} className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ivory/58 transition hover:text-champagne">
+              {item}
+            </a>
+          ))}
+        </nav>
+        <Link
+          href={localizedPath(copy.locale, '/live-os')}
+          className="rounded-full border border-champagne/50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-champagne transition hover:bg-champagne hover:text-ink"
+        >
+          {copy.enterLiveOs}
+        </Link>
+      </div>
+    </header>
+  );
+}
+
 function BrandHero({ copy }: { copy: HomeCopy }) {
   return (
-    <section className="mx-auto grid min-h-[88vh] max-w-7xl items-end gap-10 px-5 pb-16 pt-24 lg:grid-cols-[0.78fr_1.22fr] lg:pt-28">
-      <div className="relative z-10 max-w-xl pb-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.44em] text-champagne">TIDE BRIDGE</p>
-        <h1 className="mt-7 text-5xl font-semibold leading-[0.95] tracking-[-0.045em] text-white md:text-7xl">
-          {copy.title}
-        </h1>
-        <div className="mt-9 text-3xl font-semibold leading-[1.04] tracking-[-0.035em] text-white/84 md:text-5xl">
-          {copy.lines.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
+    <section className="relative isolate flex min-h-screen items-end overflow-hidden px-5 pb-16 pt-28">
+      <HeroMedia />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,9,14,0.92),rgba(3,9,14,0.58)_52%,rgba(3,9,14,0.84)),linear-gradient(180deg,rgba(3,9,14,0.26),rgba(12,12,11,0.94))]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0c0c0b] to-transparent" />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.95fr_0.55fr] lg:items-end">
+        <div className="max-w-4xl">
+          <p className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.44em] text-champagne">
+            <BridgeMark />
+            {copy.eyebrow}
+          </p>
+          <h1 className="mt-8 max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl lg:text-8xl">
+            {copy.headline}
+          </h1>
+          <div className="mt-8 max-w-3xl text-2xl font-semibold leading-tight tracking-[-0.025em] text-ivory/86 md:text-4xl">
+            {copy.englishLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </div>
+          <p className="mt-7 max-w-2xl whitespace-pre-line break-keep text-lg leading-8 text-ivory/70 md:text-xl">{copy.koreanLines.join('\n')}</p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a href="#business" className="rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
+              {copy.viewBusiness}
+            </a>
+            <Link href={localizedPath(copy.locale, '/live-os')} className="rounded-full border border-champagne/45 px-6 py-3 text-sm font-semibold text-champagne transition hover:bg-champagne hover:text-ink">
+              {copy.enterLiveOs}
+            </Link>
+            <a href="#contact" className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-ivory transition hover:border-champagne hover:text-champagne">
+              {copy.contact}
+            </a>
+          </div>
         </div>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <a href="#business" className="rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
-            {copy.viewBusiness}
-          </a>
-          <a href="#contact" className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-ivory transition hover:border-champagne hover:text-champagne">
-            {copy.contact}
-          </a>
+
+        <div className="hidden border-l border-white/15 pl-7 lg:block">
+          <div className="grid gap-4">
+            {copy.conceptLabels.map((label) => (
+              <p key={label} className="border-b border-white/10 pb-4 text-xs font-semibold uppercase tracking-[0.22em] text-ivory/58">
+                {label}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
-      <ImageSurface image={assetPaths.hero} className="min-h-[58vh] rounded-[1.1rem] border border-white/10 shadow-2xl shadow-black/45 lg:min-h-[72vh]">
-        <div className="relative z-10 flex h-full min-h-[58vh] flex-col justify-between p-5 md:p-8 lg:min-h-[72vh]">
-          <div className="flex justify-end">
-            <span className="border border-white/20 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/72">
-              Global Live IP
-            </span>
-          </div>
-          <div>
-            <div className="grid max-w-md grid-cols-3 gap-2">
-              {['Korea', 'Live', 'Culture'].map((item) => (
-                <div key={item} className="border-t border-white/25 pt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/72">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </ImageSurface>
     </section>
   );
 }
 
 function AboutSection({ copy }: { copy: HomeCopy }) {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:py-24">
+    <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="01" title="About" />
-      <div className="grid gap-10 lg:grid-cols-[0.35fr_0.65fr]">
+      <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-champagne/70">Cross-Border Company</p>
-        <p className="max-w-5xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-white/88 md:text-5xl">
-          {textLines(copy.about)}
-        </p>
+        <div>
+          <p className="max-w-5xl font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">{copy.aboutEnglish}</p>
+          <p className="mt-8 max-w-4xl whitespace-pre-line break-keep text-xl font-medium leading-9 text-ivory/68 md:text-2xl">
+            {textLines(copy.aboutKorean)}
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -266,7 +347,7 @@ function AboutSection({ copy }: { copy: HomeCopy }) {
 
 function BusinessCards({ copy }: { copy: HomeCopy }) {
   return (
-    <section id="business" className="mx-auto max-w-7xl px-5 py-20 md:py-24">
+    <section id="business" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="02" title="Business" />
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {copy.business.map((item, index) => (
@@ -275,8 +356,8 @@ function BusinessCards({ copy }: { copy: HomeCopy }) {
               <p className="text-xs font-semibold text-champagne">0{index + 1}</p>
               <span className="h-2 w-2 rounded-full bg-champagne/75 opacity-50 transition group-hover:opacity-100" />
             </div>
-            <h3 className="mt-16 text-3xl font-semibold tracking-[-0.035em] text-white">{item.title}</h3>
-            <p className="mt-7 text-sm leading-6 text-ivory/62">{item.body}</p>
+            <h3 className="mt-16 font-serif text-3xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
+            <p className="mt-7 break-keep text-sm leading-6 text-ivory/64">{item.body}</p>
           </article>
         ))}
       </div>
@@ -285,13 +366,22 @@ function BusinessCards({ copy }: { copy: HomeCopy }) {
 }
 
 function PortfolioGrid({ copy }: { copy: HomeCopy }) {
+  const fallbacks = [
+    'linear-gradient(135deg,#172531,#41321d 52%,#0b0b0b)',
+    'linear-gradient(135deg,#132a2f,#2d3524 50%,#0b0b0b)',
+    'linear-gradient(135deg,#26252a,#5b4929 54%,#0b0b0b)',
+    'linear-gradient(135deg,#1a1e2a,#4b3528 52%,#0b0b0b)',
+    'linear-gradient(135deg,#10252a,#313c4b 48%,#0b0b0b)',
+    'linear-gradient(135deg,#202410,#54401e 52%,#0b0b0b)'
+  ];
+
   return (
-    <section id="portfolio" className="mx-auto max-w-7xl px-5 py-20 md:py-24">
+    <section id="portfolio" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="03" title="Portfolio" />
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {copy.portfolio.map((item) => (
+        {copy.portfolio.map((item, index) => (
           <article key={item.title} className="group overflow-hidden border border-white/10 bg-[#141311] transition duration-300 hover:-translate-y-1 hover:border-champagne/45">
-            <ImageSurface image={item.image} className="h-72 transition duration-700 group-hover:scale-[1.025]">
+            <ImageSurface image={item.image} fallback={fallbacks[index]} className="h-72 transition duration-700 group-hover:scale-[1.025]">
               <div className="absolute inset-x-0 bottom-0 z-10 translate-y-4 p-5 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag) => (
@@ -304,7 +394,7 @@ function PortfolioGrid({ copy }: { copy: HomeCopy }) {
             </ImageSurface>
             <div className="p-6">
               <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-champagne/75">Portfolio</p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-white">{item.title}</h3>
+              <h3 className="mt-4 font-serif text-2xl font-semibold tracking-[-0.02em] text-white">{item.title}</h3>
               <p className="mt-4 text-sm leading-6 text-ivory/62">{item.body}</p>
               <div className="mt-6 flex flex-wrap gap-2 md:hidden">
                 {item.tags.map((tag) => (
@@ -321,16 +411,31 @@ function PortfolioGrid({ copy }: { copy: HomeCopy }) {
   );
 }
 
+function ConceptBand({ copy }: { copy: HomeCopy }) {
+  return (
+    <section className="border-y border-white/10 bg-[#10100e]">
+      <div className="mx-auto grid max-w-7xl gap-px px-5 py-6 md:grid-cols-4">
+        {copy.conceptLabels.map((label) => (
+          <div key={label} className="border-white/10 py-5 md:border-l md:px-6 md:first:border-l-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-champagne/70">{label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function TeamPreview({ copy }: { copy: HomeCopy }) {
   return (
-    <section id="team" className="mx-auto max-w-7xl px-5 py-20 md:py-24">
+    <section id="team" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="04" title="Team" />
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <ImageSurface image={assetPaths.team} className="min-h-[24rem] border border-white/10" />
+      <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+        <ImageSurface image="/images/home/team-placeholder.jpg" fallback="linear-gradient(135deg,#151f28,#493b22_54%,#0b0b0b)" className="min-h-[24rem] border border-white/10" />
         <div className="flex flex-col justify-between gap-12 border border-white/10 bg-white/[0.035] p-6 md:p-8">
-          <p className="text-3xl font-semibold leading-tight tracking-[-0.035em] text-white/88 md:text-5xl">
-            {textLines(copy.team)}
-          </p>
+          <div>
+            <p className="max-w-4xl font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">{copy.teamEnglish}</p>
+            <p className="mt-7 whitespace-pre-line break-keep text-xl font-medium leading-9 text-ivory/66 md:text-2xl">{textLines(copy.teamKorean)}</p>
+          </div>
           <div className="flex flex-wrap gap-3">
             {copy.roles.map((item) => (
               <span key={item} className="border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-ivory/62">
@@ -344,19 +449,45 @@ function TeamPreview({ copy }: { copy: HomeCopy }) {
   );
 }
 
-function ContactCTA({ copy }: { copy: HomeCopy }) {
+function ContactSection({ copy }: { copy: HomeCopy }) {
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:py-24">
-      <div className="grid gap-10 border border-white/10 bg-[linear-gradient(135deg,rgba(215,181,109,0.16),rgba(247,240,230,0.045)_42%,rgba(247,240,230,0.025))] p-7 md:p-12 lg:grid-cols-[1fr_auto] lg:items-end">
+    <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
+      <div className="grid gap-10 border border-white/10 bg-[linear-gradient(135deg,rgba(215,181,109,0.16),rgba(247,240,230,0.045)_42%,rgba(247,240,230,0.025))] p-7 md:p-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.26em] text-champagne/80">Contact</p>
-          <h2 className="mt-7 max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-6xl">
-            {textLines(copy.contactText)}
+          <h2 className="mt-7 max-w-4xl font-serif text-4xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-6xl">
+            {copy.contactEnglish}
           </h2>
+          <p className="mt-7 max-w-xl break-keep text-lg leading-8 text-ivory/66">{copy.contactKorean}</p>
         </div>
-        <Link href={localizedPath(copy.locale, '/apply')} className="inline-flex rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
-          {copy.contactCta}
-        </Link>
+
+        <form className="grid gap-4" action={localizedPath(copy.locale, '/apply')}>
+          <div className="grid gap-4 md:grid-cols-2">
+            <label className="grid gap-2">
+              <span className="label">Name</span>
+              <input className="input" name="name" type="text" autoComplete="name" placeholder="Your name" />
+            </label>
+            <label className="grid gap-2">
+              <span className="label">Email</span>
+              <input className="input" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
+            </label>
+          </div>
+          <label className="grid gap-2">
+            <span className="label">Opportunity</span>
+            <input className="input" name="opportunity" type="text" placeholder="Partnership, market entry, global live IP" />
+          </label>
+          <label className="grid gap-2">
+            <span className="label">Message</span>
+            <textarea
+              className="input min-h-36 resize-y"
+              name="message"
+              placeholder="Tell us what you would like to build with Tide Bridge."
+            />
+          </label>
+          <button className="mt-2 rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne" type="submit">
+            {copy.contactCta}
+          </button>
+        </form>
       </div>
     </section>
   );
@@ -368,28 +499,15 @@ export function BrandHomePage({ locale = 'root' }: { locale?: HomeLocale }) {
 
   return (
     <div className={`min-h-screen scroll-smooth bg-[#0c0c0b] text-ivory ${isCjk ? 'cjk-keep' : ''}`}>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0c0c0b]/88 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-5">
-          <Link href={localizedPath(copy.locale, '')} className="text-xs font-semibold uppercase tracking-[0.38em] text-ivory">
-            Tide Bridge
-          </Link>
-          <nav className="hidden items-center gap-6 md:flex">
-            {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ivory/55 transition hover:text-champagne">
-                {item}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </header>
-
+      <HomeHeader copy={copy} />
       <main>
         <BrandHero copy={copy} />
         <AboutSection copy={copy} />
         <BusinessCards copy={copy} />
         <PortfolioGrid copy={copy} />
+        <ConceptBand copy={copy} />
         <TeamPreview copy={copy} />
-        <ContactCTA copy={copy} />
+        <ContactSection copy={copy} />
       </main>
     </div>
   );
