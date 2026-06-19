@@ -22,12 +22,10 @@ type HomeCopy = {
   locale: HomeLocale;
   eyebrow: string;
   headline: string;
-  englishLines: string[];
   koreanLines: string[];
   viewBusiness: string;
   enterLiveOs: string;
   contact: string;
-  aboutEnglish: string;
   aboutKorean: string;
   business: BusinessItem[];
   portfolio: PortfolioItem[];
@@ -44,7 +42,14 @@ const navItems = ['About', 'Business', 'Portfolio', 'Team', 'Contact'];
 
 const mediaPaths = {
   heroVideo: '/media/wave-hero.mp4',
-  heroPoster: '/media/wave-hero-poster.jpg'
+  heroPoster: '/media/wave-hero-poster.jpg',
+  heroFallback: '/images/home/hero-fallback.jpg'
+};
+
+const imagePaths = {
+  about: '/images/home/about-bridge.jpg',
+  team: '/images/home/team-global.jpg',
+  contact: '/images/home/contact-seoul.jpg'
 };
 
 const portfolioItems: PortfolioItem[] = [
@@ -97,12 +102,10 @@ const baseCopy: HomeCopy = {
   locale: 'root',
   eyebrow: 'TIDE BRIDGE',
   headline: 'Connecting the Next Wave of Culture',
-  englishLines: ['Korean Content.', 'Global Live IP.', 'One Cross-Border Bridge.'],
   koreanLines: ['한국 콘텐츠와', '글로벌 라이브 IP를', '하나의 브릿지로 연결합니다.'],
   viewBusiness: 'View Business',
   enterLiveOs: 'Enter Live OS',
   contact: 'Contact',
-  aboutEnglish: 'Tide Bridge connects Korean content, global live opportunities, and verified partners across culture, entertainment, and market entry.',
   aboutKorean: 'Tide Bridge는 한국 콘텐츠와 글로벌 라이브·컬처 IP를 연결하는\n크로스보더 엔터테인먼트 컴퍼니입니다.',
   business: businessItems,
   portfolio: portfolioItems,
@@ -172,6 +175,10 @@ function imageStyle(image: string, fallback: string) {
   return { '--image': imageValue, '--fallback': fallback } as CSSProperties;
 }
 
+function hasPublicImage(image: string) {
+  return publicFileExists(image);
+}
+
 function SectionLabel({ id, title }: { id: string; title: string }) {
   return (
     <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-4 md:mb-12">
@@ -194,20 +201,35 @@ function BridgeMark() {
 function ImageSurface({
   image,
   fallback,
+  label,
   className = '',
   children
 }: {
   image: string;
   fallback: string;
+  label?: string;
   className?: string;
   children?: ReactNode;
 }) {
+  const hasImage = hasPublicImage(image);
+
   return (
     <div
       className={`relative overflow-hidden bg-[image:linear-gradient(135deg,rgba(215,181,109,0.24),rgba(247,240,230,0.07)_34%,rgba(12,12,11,0.96)),var(--image),var(--fallback)] bg-cover bg-center ${className}`}
       style={imageStyle(image, fallback)}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.18),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.7))]" />
+      {!hasImage && label ? (
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute left-6 top-6 h-px w-24 bg-champagne/45" />
+          <div className="absolute right-6 top-6 h-24 w-px bg-champagne/30" />
+          <div className="absolute bottom-8 left-6 flex items-end gap-4">
+            <BridgeMark />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-champagne/70">{label}</span>
+          </div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_72%,rgba(215,181,109,0.15),transparent_18rem),linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.035)_46%,transparent_47%)]" />
+        </div>
+      ) : null}
       {children}
     </div>
   );
@@ -238,6 +260,16 @@ function HeroMedia() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${mediaPaths.heroPoster})` }}
+        aria-hidden="true"
+      />
+    );
+  }
+
+  if (publicFileExists(mediaPaths.heroFallback)) {
+    return (
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${mediaPaths.heroFallback})` }}
         aria-hidden="true"
       />
     );
@@ -293,14 +325,7 @@ function BrandHero({ copy }: { copy: HomeCopy }) {
           <h1 className="mt-8 max-w-4xl font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl lg:text-8xl">
             {copy.headline}
           </h1>
-          <div className="mt-8 max-w-3xl text-2xl font-semibold leading-tight tracking-[-0.025em] text-ivory/86 md:text-4xl">
-            {copy.englishLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
-          </div>
-          <p className="mt-7 max-w-2xl whitespace-pre-line break-keep text-lg leading-8 text-ivory/70 md:text-xl">{copy.koreanLines.join('\n')}</p>
+          <p className="mt-8 max-w-2xl whitespace-pre-line break-keep text-2xl font-semibold leading-tight tracking-[-0.02em] text-ivory/82 md:text-4xl">{copy.koreanLines.join('\n')}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a href="#business" className="rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne">
               {copy.viewBusiness}
@@ -329,14 +354,29 @@ function BrandHero({ copy }: { copy: HomeCopy }) {
 }
 
 function AboutSection({ copy }: { copy: HomeCopy }) {
+  const hasAboutImage = hasPublicImage(imagePaths.about);
+
   return (
     <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="01" title="About" />
-      <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
-        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-champagne/70">Cross-Border Company</p>
+      <div className="grid gap-10 lg:grid-cols-[0.82fr_1fr] lg:items-center">
+        <ImageSurface
+          image={imagePaths.about}
+          fallback="linear-gradient(135deg,#07121b,#2d2618_54%,#0c0c0b)"
+          label="Bridge"
+          className="min-h-[22rem] border border-white/10 md:min-h-[30rem]"
+        >
+          {!hasAboutImage ? (
+            <div className="relative z-10 flex h-full min-h-[22rem] items-center justify-center md:min-h-[30rem]">
+              <div className="scale-150 text-champagne/70">
+                <BridgeMark />
+              </div>
+            </div>
+          ) : null}
+        </ImageSurface>
         <div>
-          <p className="max-w-5xl font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">{copy.aboutEnglish}</p>
-          <p className="mt-8 max-w-4xl whitespace-pre-line break-keep text-xl font-medium leading-9 text-ivory/68 md:text-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-champagne/70">Cross-Border Company</p>
+          <p className="mt-8 max-w-4xl whitespace-pre-line break-keep font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">
             {textLines(copy.aboutKorean)}
           </p>
         </div>
@@ -381,22 +421,15 @@ function PortfolioGrid({ copy }: { copy: HomeCopy }) {
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {copy.portfolio.map((item, index) => (
           <article key={item.title} className="group overflow-hidden border border-white/10 bg-[#141311] transition duration-300 hover:-translate-y-1 hover:border-champagne/45">
-            <ImageSurface image={item.image} fallback={fallbacks[index]} className="h-72 transition duration-700 group-hover:scale-[1.025]">
-              <div className="absolute inset-x-0 bottom-0 z-10 translate-y-4 p-5 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span key={tag} className="bg-black/35 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/78 backdrop-blur">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            <ImageSurface image={item.image} fallback={fallbacks[index]} label={item.title} className="h-80 transition duration-700 group-hover:scale-[1.025]">
+              <div className="absolute inset-x-0 bottom-0 z-10 p-6">
+                <div className="mb-4 h-px w-16 bg-champagne/70 transition group-hover:w-24" />
+                <h3 className="font-serif text-3xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
               </div>
             </ImageSurface>
             <div className="p-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-champagne/75">Portfolio</p>
-              <h3 className="mt-4 font-serif text-2xl font-semibold tracking-[-0.02em] text-white">{item.title}</h3>
-              <p className="mt-4 text-sm leading-6 text-ivory/62">{item.body}</p>
-              <div className="mt-6 flex flex-wrap gap-2 md:hidden">
+              <p className="text-sm leading-6 text-ivory/62">{item.body}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
                 {item.tags.map((tag) => (
                   <span key={tag} className="border border-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-ivory/55">
                     {tag}
@@ -430,7 +463,7 @@ function TeamPreview({ copy }: { copy: HomeCopy }) {
     <section id="team" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
       <SectionLabel id="04" title="Team" />
       <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
-        <ImageSurface image="/images/home/team-placeholder.jpg" fallback="linear-gradient(135deg,#151f28,#493b22_54%,#0b0b0b)" className="min-h-[24rem] border border-white/10" />
+        <ImageSurface image={imagePaths.team} fallback="linear-gradient(135deg,#151f28,#493b22_54%,#0b0b0b)" label="Team" className="min-h-[24rem] border border-white/10" />
         <div className="flex flex-col justify-between gap-12 border border-white/10 bg-white/[0.035] p-6 md:p-8">
           <div>
             <p className="max-w-4xl font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-white/90 md:text-5xl">{copy.teamEnglish}</p>
@@ -452,42 +485,46 @@ function TeamPreview({ copy }: { copy: HomeCopy }) {
 function ContactSection({ copy }: { copy: HomeCopy }) {
   return (
     <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:py-28">
-      <div className="grid gap-10 border border-white/10 bg-[linear-gradient(135deg,rgba(215,181,109,0.16),rgba(247,240,230,0.045)_42%,rgba(247,240,230,0.025))] p-7 md:p-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-champagne/80">Contact</p>
-          <h2 className="mt-7 max-w-4xl font-serif text-4xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-6xl">
-            {copy.contactEnglish}
-          </h2>
-          <p className="mt-7 max-w-xl break-keep text-lg leading-8 text-ivory/66">{copy.contactKorean}</p>
-        </div>
+      <div className="grid overflow-hidden border border-white/10 bg-[linear-gradient(135deg,rgba(215,181,109,0.16),rgba(247,240,230,0.045)_42%,rgba(247,240,230,0.025))] lg:grid-cols-[0.78fr_1.22fr]">
+        <ImageSurface image={imagePaths.contact} fallback="linear-gradient(135deg,#07121b,#3b321f_54%,#0c0c0b)" label="Seoul" className="min-h-[22rem]" />
 
-        <form className="grid gap-4" action={localizedPath(copy.locale, '/apply')}>
-          <div className="grid gap-4 md:grid-cols-2">
-            <label className="grid gap-2">
-              <span className="label">Name</span>
-              <input className="input" name="name" type="text" autoComplete="name" placeholder="Your name" />
-            </label>
-            <label className="grid gap-2">
-              <span className="label">Email</span>
-              <input className="input" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
-            </label>
+        <div className="p-7 md:p-12">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-champagne/80">Contact</p>
+            <h2 className="mt-7 max-w-4xl font-serif text-4xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-6xl">
+              {copy.contactEnglish}
+            </h2>
+            <p className="mt-7 max-w-xl break-keep text-lg leading-8 text-ivory/66">{copy.contactKorean}</p>
           </div>
-          <label className="grid gap-2">
-            <span className="label">Opportunity</span>
-            <input className="input" name="opportunity" type="text" placeholder="Partnership, market entry, global live IP" />
-          </label>
-          <label className="grid gap-2">
-            <span className="label">Message</span>
-            <textarea
-              className="input min-h-36 resize-y"
-              name="message"
-              placeholder="Tell us what you would like to build with Tide Bridge."
-            />
-          </label>
-          <button className="mt-2 rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne" type="submit">
-            {copy.contactCta}
-          </button>
-        </form>
+
+          <form className="mt-10 grid gap-4" action={localizedPath(copy.locale, '/apply')}>
+            <div className="grid gap-4 md:grid-cols-2">
+              <label className="grid gap-2">
+                <span className="label">Name</span>
+                <input className="input" name="name" type="text" autoComplete="name" placeholder="Your name" />
+              </label>
+              <label className="grid gap-2">
+                <span className="label">Email</span>
+                <input className="input" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
+              </label>
+            </div>
+            <label className="grid gap-2">
+              <span className="label">Opportunity</span>
+              <input className="input" name="opportunity" type="text" placeholder="Partnership, market entry, global live IP" />
+            </label>
+            <label className="grid gap-2">
+              <span className="label">Message</span>
+              <textarea
+                className="input min-h-36 resize-y"
+                name="message"
+                placeholder="Tell us what you would like to build with Tide Bridge."
+              />
+            </label>
+            <button className="mt-2 rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink transition hover:bg-champagne" type="submit">
+              {copy.contactCta}
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
