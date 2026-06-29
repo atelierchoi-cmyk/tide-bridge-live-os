@@ -57,7 +57,7 @@ export function LocalizedPlatform({ dict, locale }: { dict: any; locale: string 
         <p className="label mb-3">Intelligence Layer</p>
         <h3 className="text-2xl font-semibold tracking-[-0.03em] text-ivory">IP value signals, market demand, partner trust, and deal readiness.</h3>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-ivory/60">
-          Tide Bridge Intelligence adds the decision layer for cross-border live and cultural IP opportunities before private access, offers, and deeper deal review.
+          Tide Bridge Intelligence structures IP value, market demand, partner trust, and deal readiness before access or execution.
         </p>
         <Link href={`/${locale}/intelligence`} className="btn-secondary mt-6 inline-flex">Explore Intelligence</Link>
       </div>

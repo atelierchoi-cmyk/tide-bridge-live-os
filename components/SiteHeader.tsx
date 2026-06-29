@@ -42,9 +42,9 @@ export function SiteHeader() {
       label: 'Platform',
       items: [
         { href: `${prefix}/ip-catalog`, label: 'IP Catalog' },
-        { href: `${prefix}/fan-demand`, label: 'Fan Demand' },
+        { href: `${prefix}/fan-demand`, label: 'Market Signals' },
         { href: `${prefix}/partner/submit-offer`, label: 'Offer Management' },
-        { href: `${prefix}/intelligence`, label: 'Market Signals' }
+        { href: `${prefix}/intelligence`, label: 'Intelligence Layer' }
       ]
     },
     { href: `${prefix}/intelligence`, label: 'Intelligence' },

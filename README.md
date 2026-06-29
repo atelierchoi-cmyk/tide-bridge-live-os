@@ -1,12 +1,12 @@
 # Tide Bridge Live OS MVP
 
-**Tide Bridge Live OS** is a private B2B infrastructure MVP for global K-POP live IP expansion through verified partners, private IP access, offer management, and market demand intelligence.
+**Tide Bridge Live OS** is a private B2B live and cultural IP infrastructure MVP connecting Korean content and global live opportunities through verified partners, private IP access, offer management, and market intelligence.
 
 This starter is designed for Codex/GitHub/Vercel/Supabase development.
 
 ## Core positioning
 
-> Private B2B Live IP Infrastructure.
+> Private B2B Live & Cultural IP Infrastructure.
 
 The first release should read as a premium, confidential operating layer for reviewed global live IP opportunities, not as a consumer-facing commerce or open-access product.
 
@@ -31,7 +31,7 @@ The first release should read as a premium, confidential operating layer for rev
   - IP management
   - Promoter applications
   - Offer pipeline
-  - Fan demand dashboard
+  - Market signals dashboard
   - P&L / BEP simulator
 - Supabase-ready API routes
   - `/api/fan-demand`
@@ -113,7 +113,7 @@ Do **not** build consumer commerce, media delivery, or unrelated monetization mo
 The first monetizable goal is:
 
 1. Recruit verified local promoters.
-2. Show selected K-POP live IP/packages.
+2. Show selected live and cultural IP review packages, with K-POP as one key Korean content category.
 3. Collect structured opportunity review requests.
 4. Review each opportunity through P&L/BEP and deal-readiness logic.
 5. Move qualified opportunities into a controlled private review process.

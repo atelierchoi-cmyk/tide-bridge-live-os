@@ -6,7 +6,7 @@ export default function SubmitOfferPage() {
   const dict = getDictionary('ko');
 
   return (
-    <Section eyebrow="Submit Offer" title="Create a structured market offer." body="A strong offer should include city, venue, capacity, date window, guarantee amount, deal mode, and market rationale.">
+    <Section eyebrow="Offer Management" title="Submit a structured opportunity." body="Include market, venue, sellable capacity, timing, commercial baseline, credibility, and rationale.">
       <OfferForm copy={dict.forms.offer} />
     </Section>
   );
