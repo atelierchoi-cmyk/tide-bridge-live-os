@@ -33,9 +33,9 @@ export function Hero({
       <div className="relative mx-auto max-w-7xl px-5 py-24 md:py-32">
         <div className="max-w-4xl">
           <p className="label mb-6 break-keep">{copy.eyebrow}</p>
-          <h1 className="break-keep text-5xl font-semibold leading-[1.03] text-ivory md:text-8xl md:leading-[0.98]">{copy.title}</h1>
-          <p className="mt-8 max-w-2xl break-keep text-lg leading-8 text-ivory/65">{copy.body}</p>
-          {copy.supportingBody ? <p className="mt-4 max-w-2xl break-keep text-base leading-8 text-ivory/55">{copy.supportingBody}</p> : null}
+          <h1 className="cjk-copy whitespace-pre-line break-keep text-5xl font-semibold leading-[1.03] text-ivory md:text-8xl md:leading-[0.98]">{copy.title}</h1>
+          <p className="cjk-copy mt-8 max-w-2xl whitespace-pre-line break-keep text-lg leading-8 text-ivory/65">{copy.body}</p>
+          {copy.supportingBody ? <p className="cjk-copy mt-4 max-w-2xl whitespace-pre-line break-keep text-base leading-8 text-ivory/55">{copy.supportingBody}</p> : null}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             {actions.map((action) => (
               <Link
@@ -51,8 +51,8 @@ export function Hero({
         <div className="mt-16 grid gap-4 md:grid-cols-3">
           {copy.cards.map(([title, body]) => (
             <div key={title} className="card p-6">
-              <p className="break-keep text-lg font-semibold text-ivory">{title}</p>
-              <p className="mt-3 break-keep text-sm leading-6 text-ivory/55">{body}</p>
+              <p className="cjk-copy whitespace-pre-line break-keep text-lg font-semibold text-ivory">{title}</p>
+              <p className="cjk-copy mt-3 whitespace-pre-line break-keep text-sm leading-6 text-ivory/55">{body}</p>
             </div>
           ))}
         </div>

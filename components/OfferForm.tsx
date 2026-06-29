@@ -110,7 +110,7 @@ export function OfferForm({ copy }: { copy: OfferFormCopy }) {
       <div>
         <label className="label">{copy.labels.capacity}</label>
         <input className="input mt-2" type="number" min={100} value={form.capacity} onChange={(e) => setForm({ ...form, capacity: Number(e.target.value) })} />
-        <p className="mt-2 text-xs leading-5 text-ivory/45">{copy.capacityHelper}</p>
+        <p className="cjk-copy mt-2 whitespace-pre-line text-xs leading-5 text-ivory/45">{copy.capacityHelper}</p>
       </div>
       <div>
         <label className="label">{copy.labels.dateWindow}</label>
@@ -138,7 +138,7 @@ export function OfferForm({ copy }: { copy: OfferFormCopy }) {
       </div>
       <div className="md:col-span-2 flex flex-wrap items-center gap-4">
         <button className="btn-primary" type="submit" disabled={status === 'loading'}>{status === 'loading' ? copy.loading : copy.submit}</button>
-        {message ? <p className={`text-sm ${status === 'error' ? 'text-clay' : 'text-champagne'}`} aria-live="polite">{message}</p> : null}
+        {message ? <p className={`cjk-copy whitespace-pre-line text-sm ${status === 'error' ? 'text-clay' : 'text-champagne'}`} aria-live="polite">{message}</p> : null}
       </div>
     </form>
   );

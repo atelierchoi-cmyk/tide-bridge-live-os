@@ -81,7 +81,7 @@ export function ApplicationForm({ copy }: { copy: ApplicationFormCopy }) {
       <div>
         <label className="label">{copy.labels.company}</label>
         <input className="input mt-2" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder={copy.placeholders.company} />
-        <p className="mt-2 text-xs leading-5 text-ivory/45">{copy.helper}</p>
+        <p className="cjk-copy mt-2 whitespace-pre-line text-xs leading-5 text-ivory/45">{copy.helper}</p>
       </div>
       <div>
         <label className="label">{copy.labels.contactName}</label>
@@ -115,7 +115,7 @@ export function ApplicationForm({ copy }: { copy: ApplicationFormCopy }) {
       </div>
       <div className="md:col-span-2 flex flex-wrap items-center gap-4">
         <button className="btn-primary" type="submit" disabled={status === 'loading'}>{status === 'loading' ? copy.loading : copy.submit}</button>
-        {message ? <p className={`text-sm ${status === 'error' ? 'text-clay' : 'text-champagne'}`} aria-live="polite">{message}</p> : null}
+        {message ? <p className={`cjk-copy whitespace-pre-line text-sm ${status === 'error' ? 'text-clay' : 'text-champagne'}`} aria-live="polite">{message}</p> : null}
       </div>
     </form>
   );

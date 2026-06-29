@@ -5,7 +5,7 @@ import { SiteFooter } from '@/components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Tide Bridge Live OS',
-  description: 'Private B2B infrastructure for global K-POP live IP expansion.'
+  description: 'Private B2B infrastructure for live and cultural IP opportunities.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
